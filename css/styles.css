@@ -1,6 +1,11 @@
+body {
+    margin: 0;
+}
+
 .navbar {
     overflow: hidden;
     background-color: #333;
+    margin-bottom: 25px;
 }
 
 .navbar a {
@@ -54,4 +59,21 @@
         display: block;
         text-align: left;
     }
+}
+
+.container {
+    padding: 20px 40px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+hr {
+    margin: 50px 0px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
 }
