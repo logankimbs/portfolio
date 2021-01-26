@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Logan Kimball - Home</title>
+        <title>Logan Kimball - Home</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel='stylesheet' href='./css/styles.css'>
     </head>
     <body>
-        <h1>Home</h1>
-
-        <hr>
+        <div class="navbar" id="myNavbar">
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Projects</a>
+            <a href="#">Experience</a>
+            <a href="#">Contact</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
 
         <h2>About Me</h2>
         <p>I am currently attending Brigham Young University and studying Information Systems. I relish a fascinating podcast, interesting conversation, and an unassuming win (especially in table tennis). Jerry Seinfeld always makes me laugh. Skateboarding, surfing, fishing, mountain biking, and climbing light my fire. I am a big fan of yardwork. And love of family sustains me.</p>
@@ -41,7 +50,7 @@
                 <li>Prepared project review packages for construction managers and superintendents</li>
                 <li>Implemented and directed a project making 3D scans readily available to all major project managers within the organization</li>
         </ul>
-        
+
         <hr>
 
         <h2>Contact Me</h2>
@@ -49,5 +58,17 @@
             <li><a href="https://www.linkedin.com/in/logan-kimball-2b9266122/" target="blank">LinkedIn</a></li>
             <li><a href="https://github.com/logankimbs" target="blank">GitHub</a></li>
         </ul>
+
+        <script>
+            function toggleMenu() {
+                var trgt = document.getElementById("myNavbar");
+
+                if (trgt.className == "navbar") {
+                    trgt.className += " responsive";
+                } else {
+                    trgt.className = "navbar";
+                }
+            }
+        </script>
     </body>
 </html>
