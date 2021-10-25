@@ -2,7 +2,7 @@
 
 A [React](https://github.com/facebook/react) app that displays my resume, projects, and contact information.
 
-## Run Locally
+## Install Locally
 
 Clone the project
 
@@ -22,17 +22,9 @@ Install dependencies
 npm install
 ```
 
-Start the server
-
-```bash
-npm start
-```
-
 ## Start Development Server
 
-This runs the app in development mode.
-
-In the app directory, run:
+In the project directory
 
 ```bash
 npm start
@@ -42,7 +34,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the app in the brows
 
 ## Running Tests
 
-To run tests, run the following command
+To run tests
 
 ```bash
 npm test
@@ -50,24 +42,12 @@ npm test
 
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Start Test Runner
+## Deployment
 
-#### `npm test`
+To deploy this project run
 
--   This launches the test runner in the interactive watch mode.
-
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### Build for Production
-
-#### `npm run build`
-
--   This creates a build directory with a production build of your app.
--   It properly bundles React in production mode and optimizes the build for the best performance.
--   The build is minified and the filenames include the hashes.
+```bash
+  npm run build
+```
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-```
-
-```
