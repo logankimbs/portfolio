@@ -4,15 +4,10 @@ A [React](https://github.com/facebook/react) app that displays my resume, projec
 
 ## Install Locally
 
-Clone the project
+Clone and navigate to portfolio
 
 ```bash
 git clone https://github.com/logankimbs/portfolio.git
-```
-
-Go to the project directory
-
-```bash
 cd portfolio
 ```
 
@@ -30,7 +25,7 @@ In the project directory
 npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
+-   Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
 
 ## Running Tests
 
@@ -40,14 +35,14 @@ To run tests
 npm test
 ```
 
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ## Deployment
 
 To deploy this project run
 
 ```bash
-  npm run build
+npm run build
 ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
