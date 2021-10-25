@@ -2,16 +2,53 @@
 
 A [React](https://github.com/facebook/react) app that displays my resume, projects, and contact information.
 
-## Available Scripts
+## Run Locally
 
-In the app directory, you can run:
+Clone the project
 
-### Start Development Server
+```bash
+git clone https://github.com/logankimbs/portfolio.git
+```
 
-#### `npm start`
+Go to the project directory
 
--   This runs the app in development mode.
--   Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
+```bash
+cd portfolio
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Start the server
+
+```bash
+npm start
+```
+
+## Start Development Server
+
+This runs the app in development mode.
+
+In the app directory, run:
+
+```bash
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+npm test
+```
+
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### Start Test Runner
 
@@ -30,3 +67,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 -   The build is minified and the filenames include the hashes.
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+```
+
+```
