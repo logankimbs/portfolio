@@ -1,34 +1,66 @@
 import * as React from 'react';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
+import makeStyles from '@mui/styles/makeStyles'
+import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
+import { ReactComponent as PythonIcon } from '../images/python-icon.svg';
+import { ReactComponent as JsIcon } from '../images/js-icon.svg';
+import { ReactComponent as CppIcon } from '../images/cpp-icon.svg';
+import { ReactComponent as TsIcon } from '../images/ts-icon.svg';
 
-const skills = ['python', 'javascript', 'c++'];
+
+const useStyles = makeStyles({
+    skills: {
+        maxWidth: '68.75rem',
+        margin: 'auto',
+        textAlign: 'center',
+        marginTop: '2.5rem',
+    },
+
+    icon: {
+        width: '11.874rem',
+        height: '11.25rem'
+    }
+});
+
 
 function Skills() {
+    const classes = useStyles();
+
     return (
-        <Container maxWidth="md"
-                   component="main">
-            <Grid container
-                  spacing={5}
-                  alignItems="flex-end">
-                {skills.map((skill) => (
-                    <Grid item
-                          key={skill.title}
-                          xs={12}
-                          md={4}>
-                        <Card>
-                            <CardMedia component="svg"
-                                       height="194"
-                                       image=""
-                                       alt={`${skill} logo`}/>
-                        </Card>
-                    </Grid>
-                ))}
-            </Grid>
-        </Container>
+        <Box className={classes.skills}>
+            <SkillCard>
+                <PythonIcon className={classes.icon}/>
+            </SkillCard>
+            <SkillCard>
+                <JsIcon className={classes.icon}/>
+            </SkillCard>
+            <SkillCard>
+                <CppIcon className={classes.icon}/>
+            </SkillCard>
+            <SkillCard>
+                <TsIcon className={classes.icon}/>
+            </SkillCard>
+        </Box>
     );
 }
+
+
+function SkillCard(props) {
+    const { sx, ...other } = props;
+    return (
+        <Card
+            raised
+            component='span'
+            sx={{
+                display: 'inline-block',
+                mx: '5px',
+                p: 2,
+                transform: 'scale(0.8)' 
+            }}
+            {...other}
+        />
+    );
+}
+
 
 export default Skills;
