@@ -1,5 +1,4 @@
 import './App.css';
-import blue from '@mui/material/colors/blue';
 import Box from '@mui/material/Box';
 import NavBar from './components/NavBar';
 import Paper from '@mui/material/Paper';
