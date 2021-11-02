@@ -58,7 +58,7 @@ function NavBar() {
                             flexGrow: 1
                         }}
                     >
-                        Title page
+                        Logan Kimball
                     </Typography>
                 </Toolbar>
             </AppBar>

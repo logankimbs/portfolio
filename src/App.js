@@ -1,4 +1,5 @@
 import './App.css';
+import blue from '@mui/material/colors/blue';
 import Box from '@mui/material/Box';
 import NavBar from './components/NavBar';
 import Paper from '@mui/material/Paper';
@@ -8,9 +9,14 @@ import Hero from './components/Hero';
 function App() {
     return (
         <div className='App'>
-            <Box>
+            <Box
+                sx={{
+                    height: '100%',
+                    transform: 'translateZ(0px)',
+                    flexGrow: 1
+                }}
+            >
                 <NavBar/>
-
                 <Paper
                     elevation={0}
                     sx={{
