@@ -10,7 +10,8 @@ function Page() {
         <Box>
             <Card
                 sx={{
-                    maxWidth: 345
+                    width: 1,
+                    maxWidth: 380
                 }}
             >
                 <CardContent>

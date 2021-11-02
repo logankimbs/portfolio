@@ -1,33 +1,28 @@
 import './App.css';
-import makeStyles from '@mui/styles/makeStyles';
 import Box from '@mui/material/Box';
 import NavBar from './components/NavBar';
 import Paper from '@mui/material/Paper';
-import About from './components/About';
-
-
-const useStyles = makeStyles({
-    root: {
-        borderRadius: '16px 16px 0px 0px'
-    }
-})
+import Hero from './components/Hero';
 
 
 function App() {
-    const classes = useStyles();
-
     return (
         <div className='App'>
             <Box>
-                {/* navbar and menu */}
                 <NavBar/>
+
                 <Paper
-                    className={classes.root}
+                    elevation={0}
                     sx={{
-                        p: 2
+                        width: 1,
+                        px: 2,
+                        pt: 4,
+                        borderRadius: '16px 16px 0 0',
+                        mx: 'auto',
+                        pb: 4
                     }}
                 >
-                    <About/>    
+                    <Hero/>
                 </Paper>
             </Box>
         </div>

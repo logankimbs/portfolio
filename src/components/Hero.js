@@ -1,45 +1,27 @@
-import React from 'react'
-import Box from '@mui/material/Box'
+import React from 'react';
+import Container from '@mui/material/Container';
 import { ReactComponent as FishingSvg } from '../images/fish.svg';
-import makeStyles from '@mui/styles/makeStyles';
-
-const useStyles = makeStyles({
-    hero: {
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "2.5rem",
-        maxWidth: "68.75rem",
-        margin: "auto",
-    },
-
-    svg: {
-        height: "37.5rem",
-        width: "37.5rem"
-    },
-
-    bio: {
-        width: "25rem",
-        padding: "0.625rem"
-    }
-});
+import About from './About';
 
 
 function Hero(){
-    const classes = useStyles();
-
     return (
-        <Box
-            className={classes.hero} 
+        <Container
             sx={{
-                 bgcolor: "background.paper",
-                 pt: 8,
-                 pb: 6
-            }}
-        >
-            <FishingSvg className={classes.svg}/>
-        </Box>
+                mb: 12
+            }}>
+            <FishingSvg
+                style={{
+                    padding: '16px',
+                    width: '100%',
+                    height: '40%',
+                    marginBottom: '96px'
+                }}
+            />
+            <About/>
+        </Container>
     );
 }
+
 
 export default Hero;

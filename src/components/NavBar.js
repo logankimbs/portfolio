@@ -3,6 +3,7 @@ import blue from '@mui/material/colors/blue';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -35,18 +36,21 @@ function NavBar() {
                 position='static'
             >
                 <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{
-                            mr: 2 
-                        }}
-                        onClick={() => setShow(prev => !prev)}
-                    >
-                        {!show ? <MenuIcon/> : <CloseIcon/>}
-                    </IconButton>
+                    <ClickAwayListener 
+                        onClickAway={() => setShow(false)}>
+                        <IconButton
+                            size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            sx={{
+                                mr: 2 
+                            }}
+                            onClick={() => setShow(prev => !prev)}
+                        >
+                            {!show ? <MenuIcon/> : <CloseIcon/>}
+                        </IconButton>
+                    </ClickAwayListener>
                     <Typography
                         variant="h6"
                         component="div"
@@ -58,7 +62,6 @@ function NavBar() {
                     </Typography>
                 </Toolbar>
             </AppBar>
-
             {show &&
                 <Box
                     sx={{
