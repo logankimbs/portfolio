@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import NavBar from './components/NavBar';
 import Paper from '@mui/material/Paper';
 import Hero from './components/Hero';
-import SocialButton from './components/SocialButton';
 
 
 function App() {
@@ -29,7 +28,6 @@ function App() {
                     }}
                 >
                     <Hero/>
-                    <SocialButton/>
                 </Paper>
             </Box>
         </div>
