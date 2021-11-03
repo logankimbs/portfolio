@@ -9,10 +9,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 3rem;
 }
 
 .fishing-svg {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 /* Mobile Styles */
@@ -37,4 +38,15 @@
     .about {
         width: 325px;
     }
+}
+
+/* Resume */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill {
+    margin: 4px 2px;
 }
