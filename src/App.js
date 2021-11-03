@@ -7,7 +7,7 @@ function App() {
     return (
         <div className='App'>
             <NavBar/>
-            <Container>
+            <Container sx={{ pt: 4 }}>
                 <Hero/>
             </Container>
         </div>

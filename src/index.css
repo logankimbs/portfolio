@@ -3,3 +3,38 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Hero */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fishing-svg {
+    margin-bottom: 2rem;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 767px) {
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 768px) {
+    .hero {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+
+    .fishing-svg {
+        margin-bottom: 0;
+    }
+
+    .about {
+        width: 325px;
+    }
+}
