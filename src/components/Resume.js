@@ -72,6 +72,12 @@ function determinTense(num) {
 
 function Skills() {
     return (
+        <Box>
+            <Typography 
+                variant='h6'
+                component="div">
+                skills
+            </Typography>
         <Box className='skills'>
             {skills.map((skill) => (
                 <Chip
@@ -79,6 +85,7 @@ function Skills() {
                     className='skill'
                     label={skill.title}/>
             ))}
+        </Box>
         </Box>
     );
 };

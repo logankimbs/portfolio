@@ -16,6 +16,21 @@
     margin-bottom: 3rem;
 }
 
+/* Resume */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.skill {
+    margin: 4px 2px;
+}
+
+.education {
+    margin-bottom: 3rem;
+}
+
 /* Mobile Styles */
 @media only screen and (max-width: 767px) {
 }
@@ -38,19 +53,4 @@
     .about {
         width: 325px;
     }
-}
-
-/* Resume */
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.skill {
-    margin: 4px 2px;
-}
-
-.education {
-    margin-bottom: 3rem;
 }
