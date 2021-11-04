@@ -18,11 +18,9 @@ function Hero() {
                 </Typography>
                 <Typography
                     color="text.secondary">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Mauris augue neque gravida in
-                    fermentum et sollicitudin. Nam at lectus urna duis convallis convallis tellus
-                    id interdum. Nisi quis eleifend quam adipiscing vitae proin sagittis. Vitae
-                    ultricies leo integer malesuada nunc vel risus commodo viverra.
+                    I love a good podcast, interesting conversation, and an unassuming win (especially in tennis).
+                    Rick and Morty always make me laugh. Skateboarding, surfing, fishing, and mountain biking give me meaning.
+                    I’m a big fan of yard work.
                 </Typography>
             </Box>
         </Box>
