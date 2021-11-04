@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
-import { Divider } from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 
 const skills = [
@@ -30,7 +30,6 @@ function Resume() {
     return (
         <Box>
             {Education()}
-            <Divider sx={{ mb: 6 }}/>
             {Skills()}
         </Box>
     );
@@ -38,11 +37,36 @@ function Resume() {
 
 
 function Education() {
+    var today = new Date();
+    var year = today > new Date('2022-08-29') ? 'senior' : 'junior';
+    var graduation = new Date('2023-04-21');
+    var diff = graduation.getTime() - today.getTime();
+    var days = Math.floor(diff / (1000 * 3600 * 24));
+    var isGraduated = today.getTime() > graduation.getTime() ? true : false;
+    var haveNotGraduated = `I am currently in my ${year} year at Brigham Young University pursuing a
+    Bachelor’s Degree in Information Systems with a minor in Computer
+    Science. As of ${today.toLocaleDateString()} I have ${days} ${determinTense(days)} until graduation.`;
+    var haveGraduated = `I recieved a Bachelor’s Degree in Information Systems with a minor in Computer
+    Science from Brigham Young University.`;
+
     return (
-        <Box>
-            
+        <Box className='education'>
+            <Typography 
+                variant='h6'
+                component="div">
+                education
+            </Typography>
+            <Typography
+                color="text.secondary">
+                {isGraduated ? haveGraduated : haveNotGraduated}
+            </Typography>
         </Box>
     )
+}
+
+
+function determinTense(num) {
+    return num !== 1 ? 'days' : 'day';
 }
 
 
