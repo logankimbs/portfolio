@@ -1,0 +1,168 @@
+/* green -- #606C38 */
+/* black -- rgba(0, 0, 0, 0.8); */
+/* grey -- rgba(0, 0, 0, 0.6); */
+
+/* header */
+.head {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    padding: 0 25px;
+    height: 100px;
+}
+
+.nav {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.nav .logo {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    color: inherit;
+    position: relative;
+    color: #606c38;
+}
+
+.nav .logo a {
+    color: #606c38;
+    width: 42px;
+    height: 42px;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.menu {
+    display: block;
+}
+
+.ham {
+    background-color: transparent;
+    border: none;
+}
+
+.logo button {
+    background-color: transparent;
+    border: none;
+}
+
+/* main */
+main {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 1600px;
+    min-height: 100vh;
+    padding: 0 25px;
+}
+
+section {
+    margin: 0px auto;
+    max-width: 1000px;
+}
+
+/* hero */
+.hero {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 0px;
+}
+
+.greeting {
+    color: #606c38;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    margin-left: 2px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.sirname {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.whatido {
+    margin-top: 8px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.shortintro {
+    line-height: 26px;
+    margin-top: 20px;
+    max-width: 540px;
+}
+
+.resume-btn {
+    background-color: transparent;
+    border: solid 1px #606c38;
+    border-radius: 4px;
+    color: #606c38;
+    font-weight: 500;
+}
+
+.big {
+    padding: 1.25rem 1.75rem;
+    margin-top: 50px;
+    padding: 1.25rem 1.75rem;
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .head {
+        padding: 0 50px;
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 1024px) {
+    .head {
+        padding: 0 50px;
+    }
+
+    main {
+        padding: 0px 150px;
+    }
+
+    .greeting {
+        margin-bottom: 30px;
+        margin-left: 4px;
+    }
+
+    .sirname {
+        font-size: 80px;
+    }
+
+    .whatido {
+        font-size: 80px;
+    }
+}
