@@ -19,8 +19,10 @@ function Hero() {
                     pushing the boundaries of customer needs without succumbing to scope creep.
                 </p>
             </div>
-            <div>
-                <button className='resume-btn big'>Check out my resume</button>
+            <div className='resume'>
+                <button className='resume-btn big'>
+                    <a href='../portfolio/src/resume.pdf' download>Check out me resume</a>
+                </button>
             </div>
         </section>
     );
