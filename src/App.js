@@ -1,85 +1,43 @@
 import * as React from 'react';
-import './App.css';
+import './module.App.css';
 import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import Resume from './resume.svg';
+import Box from '@mui/material/Box';
 import { styled } from '@mui/system';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
-import { ReactComponent as Logo } from "./logo.svg";
 
 const ResumeButton = styled(Button)({
-    color: 'rgb(96, 108, 56)',
-    '&:hover': {
-        backgroundColor: 'rgba(96, 108, 56, 0.158)'
-    },
-});
-
-const DownloadButton = styled(Button)({
-    position: "absolute",
-    color: 'rgb(96, 108, 56)',
-    bottom: 0,
-    width: "100%",
-    fontSize: "inherit",
-    '&:hover': {
-        backgroundColor: 'rgba(96, 108, 56, 0.158)'
-    },
-});
-
-const CloseButton = styled(IconButton)({
-    color: 'rgb(96, 108, 56)',
-    position: "absolute",
-    right: "8px",
-    top: "8px",
-    '&:hover': {
-        backgroundColor: 'rgba(96, 108, 56, 0.158)'
-    },
+    color: "rgb(96, 108, 56)",
+    "&:hover": {
+        backgroundColor: "rgba(96, 108, 56, 0.089)"
+    }
 });
 
 function App() {
-    const [open, setOpen] = React.useState(false);
-    const handleClose = () => {
-        setOpen(false);
-    };
-    const handleToggle = () => {
-        setOpen(!open);
-    };
     const download = () => {
         const link = document.createElement("a");
         link.download = 'resume.pdf';
         link.href = './resume.pdf';
+
         link.click();
     };
 
     return (
-        <main>
-            <Logo className="logo" />
-            <section className='hero'>
-                <h1 className='sirname'>Website is under construction</h1>
-                <p className='shortintro'>
-                    Sorry for the inconvience 🙁but I'm working my tail off to get this site up and running.
-                    In the mean time feel free to reach out with the provided contact information on my resume
-                    or message me on any of the apps below.
+        <Box sx={{ mx: 2 }}>
+            <Box
+                sx={{
+                    mt: 10,
+                    mx: "auto",
+                    maxWidth: 650,
+                }}
+            >
+                <h1>Website is under construction</h1>
+                <p>
+                    Sorry for the inconvience. I'm working my tail off to get this things up and running for you.
+                    In the mean time feel free to reach out with the provided contact information on my resume. Hope
+                    to hear from you soon.
                 </p>
-                <ResumeButton onClick={handleToggle} size="large">View Resume</ResumeButton>
-            </section>
-            <Dialog open={open} onClose={handleClose}>
-                <img src={Resume} />
-                <CloseButton aria-label="close" size="small" onClick={handleClose}>
-                    <CloseIcon fontSize="inherit" />
-                </CloseButton>
-                <DownloadButton
-                    aria-label="close"
-                    sx={{
-                        p: 1
-                    }}
-                    onClick={download}
-                >
-                    Download
-                </DownloadButton>
-
-            </Dialog>
-        </main>
+                <ResumeButton onClick={download} size="large">Download Resume</ResumeButton>
+            </Box>
+        </Box >
     );
 }
 

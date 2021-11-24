@@ -1,309 +1,36 @@
 :root {
-    --heading: rgba(0, 0, 0, 0.8);
-    --paragraph: rgba(0, 0, 0, 0.6);
-    --lightgreen: rgba(96, 108, 56, 0.432);
+    --heading: rgba(0, 0, 0);
+    --paragraph: rgba(0, 0, 0, 0.8);
+    --darkgreen: rgb(96, 108, 56);
+    --lightgreen: rgba(96, 108, 56, 0.452);
+    --extremelightgreen: rgba(96, 108, 56, 0.089);
 }
 
 body {
     background-color: var(--lightgreen);
-  }
-
-.logo {
-    position: absolute;
-    z-index: -200;
-    top: -120px;
-    right: -120px;
-  }
-
-/* header */
-.head {
-    display: flex;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    padding: 0 25px;
-    height: 100px;
-    z-index: 5000;
-    background-color: white;
-    transition: top 0.6s;
-}
-
-.head-hidden {
-    display: none;
-}
-
-.nav {
-    display: flex;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-}
-
-.nav .logo {
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-}
-
-a {
-    display: inline-block;
-    text-decoration: none;
-    text-decoration-skip-ink: auto;
-    color: inherit;
-    position: relative;
-    color: #606c38;
-}
-
-.nav .logo a {
-    color: #606c38;
-    width: 42px;
-    height: 42px;
-}
-
-svg {
-    width: 100%;
-    height: 100%;
-    vertical-align: middle;
-}
-
-.menu {
-    display: block;
-}
-
-.ham {
-    background-color: transparent;
-    border: none;
-}
-
-.ham:hover {
-    cursor: pointer;
-}
-
-.logo button {
-    background-color: transparent;
-    border: none;
-}
-
-button {
-    cursor: pointer;
-}
-
-/* main */
-main {
-    margin: 0px auto;
-    width: 100%;
-    max-width: 1600px;
-    min-height: 100vh;
-    padding: 0 25px;
-}
-
-section {
-    margin: 0px auto;
-    max-width: 1000px;
-}
-
-/* hero */
-.hero {
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    flex-direction: column;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding: 0px;
-}
-
-.greeting {
-    color: #606c38;
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 20px;
-    margin-left: 2px;
 }
 
 h1 {
+    color: var(--heading);
     font-size: 40px;
     font-weight: 500;
 }
 
-.sirname {
-    color: rgba(0, 0, 0, 0.8);
-}
-
-.whatido {
-    margin-top: 8px;
-    color: rgba(0, 0, 0, 0.6);
-}
-
 p {
-    color: rgba(0, 0, 0, 0.6);
-}
-
-.shortintro {
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--paragraph);
     line-height: 26px;
     margin-top: 20px;
-    max-width: 540px;
     margin-bottom: 2rem;
-}
-
-.resume-btn {
-    background-color: transparent;
-    border: solid 1px #606c38;
-    border-radius: 4px;
-    color: #606c38;
-    font-weight: 500;
-}
-
-.big {
-    padding: 1.25rem 1.75rem;
-    margin-top: 50px;
-    padding: 1.25rem 1.75rem;
-}
-
-.big:hover {
-    cursor: pointer;
-    background-color: #606c383d;
-    border: solid 1px #606c3871;
-}
-
-.big:active {
-    border: solid 1px #606c383d;
-    background-color: #606c3857;
-    color: white;
-}
-
-/* about */
-.about {
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    flex-direction: column;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding: 0px;
-    padding: 20px 0px;
-    max-width: 900px; /* maybe delete */
-}
-
-.section-heading {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    position: relative;
-    margin: 10px 0px 40px;
-    width: 100%;
-    white-space: nowrap;
-    margin-right: 20px;
-}
-
-.section-heading::after {
-    margin-left: 20px;
-}
-
-h2 {
-    font-weight: 600;
-    line-height: 1.1;
-}
-
-.about-styled-text div p {
-    line-height: 26px;
-    margin-bottom: 15px;
-}
-
-.about-styled-text ul.skills {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
-    gap: 0px 10px;
-    padding: 0px;
-    margin: 20px 0px 0px;
-    overflow: hidden;
-    list-style: none;
-    padding-left: 10px;
-}
-
-.about-styled-text ul.skills li {
-    color: #606c38;
-    position: relative;
-    margin-bottom: 10px;
-}
-
-.about-styled-picture {
-    position: relative;
-    max-width: 300px;
-    margin: 50px auto 0px;
-    width: 100%;
-}
-
-.about-styled-picture .pic-wrap {
-    /* box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.24); */
-    display: block;
-    position: relative;
-    width: 100%;
-    border-radius: 8px;
-    background-color: #606c382c;
-}
-
-.about-styled-picture .pic-wrap .svg {
-    padding: 20px;
-}
-
-.about-styled-picture .pic-wrap::after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: var(--border-radius);
-    transition: var(--transition);
-    border: 2px solid var(--green);
-    top: 20px;
-    left: 20px;
 }
 
 /* tablet styles */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    .head {
-        padding: 0 50px;
-    }
+
 }
 
 /* desktop styles */
 @media only screen and (min-width: 1024px) {
-    .head {
-        padding: 0 50px;
-    }
-
-    main {
-        padding: 0px 150px;
-    }
-
-    .greeting {
-        margin-bottom: 30px;
-        margin-left: 4px;
-    }
-
-    .sirname {
+    h1 {
         font-size: 80px;
-    }
-
-    .whatido {
-        font-size: 80px;
-    }
-
-    .about .about-text {
-        display: grid;
-        grid-template-columns: 3fr 2fr;
-        gap: 50px;
     }
 }
