@@ -14,8 +14,8 @@ const ResumeButton = styled(Button)({
 function App() {
     const download = () => {
         const link = document.createElement("a");
-        link.download = 'resume.pdf';
-        link.href = './resume.pdf';
+        link.download = "resume.pdf";
+        link.href = "./resume.pdf";
 
         link.click();
     };
