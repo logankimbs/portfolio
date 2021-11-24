@@ -1,6 +1,19 @@
-/* green -- #606C38 */
-/* black -- rgba(0, 0, 0, 0.8); */
-/* grey -- rgba(0, 0, 0, 0.6); */
+:root {
+    --heading: rgba(0, 0, 0, 0.8);
+    --paragraph: rgba(0, 0, 0, 0.6);
+    --lightgreen: rgba(96, 108, 56, 0.432);
+}
+
+body {
+    background-color: var(--lightgreen);
+  }
+
+.logo {
+    position: absolute;
+    z-index: -200;
+    top: -120px;
+    right: -120px;
+  }
 
 /* header */
 .head {
@@ -140,6 +153,7 @@ p {
     line-height: 26px;
     margin-top: 20px;
     max-width: 540px;
+    margin-bottom: 2rem;
 }
 
 .resume-btn {
