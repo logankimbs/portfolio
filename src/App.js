@@ -4,12 +4,6 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/system';
 
-const Logo = styled("img")({
-    position: "absolute",
-    width: 150,
-    zIndex: -1,
-})
-
 const ResumeButton = styled(Button)({
     color: "rgb(96, 108, 56)",
     "&:hover": {
@@ -36,7 +30,6 @@ function App() {
                         maxWidth: 650
                     }}
                 >
-                    <Logo src="./logo.svg" />
                     <h1>Website is under construction</h1>
                     <p>
                         Sorry for the inconvience. I'm working my tail off to get this things up and running for you.
