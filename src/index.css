@@ -1,13 +1,35 @@
 :root {
     --heading: rgba(0, 0, 0);
     --paragraph: rgba(0, 0, 0, 0.8);
-    --darkgreen: rgb(96, 108, 56);
     --lightgreen: rgba(96, 108, 56, 0.452);
-    --extremelightgreen: rgba(96, 108, 56, 0.089);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth;
+    }
+}
+
+* {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
 }
 
 body {
     background-color: var(--lightgreen);
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+main {
+    display: block;
 }
 
 h1 {
@@ -20,7 +42,18 @@ p {
     color: var(--paragraph);
     line-height: 26px;
     margin-top: 20px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 650px;
+    padding: 15px;
+}
+
+.hero {
+    display: block;
+    margin-top: 0em;
 }
 
 /* tablet styles */

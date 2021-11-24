@@ -21,25 +21,18 @@ function App() {
     };
 
     return (
-        <Box>
-            <Box sx={{ mx: 2 }}>
-                <Box
-                    sx={{
-                        pt: 10,
-                        mx: "auto",
-                        maxWidth: 650
-                    }}
-                >
-                    <h1>Website is under construction</h1>
-                    <p>
-                        Sorry for the inconvience. I'm working my tail off to get this things up and running for you.
-                        In the mean time feel free to reach out with the provided contact information on my resume. Hope
-                        to hear from you soon.
-                    </p>
-                    <ResumeButton onClick={download} size="large">Download Resume</ResumeButton>
-                </Box>
+        <main className="hero-container">
+            <Box className="hero">
+                <h1>Website is under construction</h1>
+                <p>
+                    Sorry for the inconvience. I'm working my tail off to get this things up and running for you.
+                    In the mean time feel free to reach out with the provided contact information on my resume. Hope
+                    to hear from you soon.
+                </p>
+                <ResumeButton onClick={download} size="large">Download Resume</ResumeButton>
             </Box>
-        </Box>
+
+        </main >
     );
 }
 
