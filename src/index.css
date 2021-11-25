@@ -58,7 +58,7 @@ p {
 }
 
 .logo {
-    position: absolute;
+    position: fixed;
     z-index: -200;
     top: -120px;
     right: -120px;
