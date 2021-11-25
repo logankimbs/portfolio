@@ -2,6 +2,7 @@
     --heading: rgba(0, 0, 0);
     --paragraph: rgba(0, 0, 0, 0.8);
     --lightgreen: rgba(96, 108, 56, 0.452);
+    --lightblack: rgba(0, 0, 0, 0.205);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -55,6 +56,13 @@ p {
     display: block;
     margin-top: 0em;
 }
+
+.logo {
+    position: absolute;
+    z-index: -200;
+    top: -120px;
+    right: -120px;
+  }
 
 /* tablet styles */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
