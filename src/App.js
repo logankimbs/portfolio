@@ -27,11 +27,17 @@ function App() {
             <Box className="hero">
                 <h1>Website is under construction</h1>
                 <p>
-                    Sorry for the inconvience.I'm working my tail off to get this things up and running for you.
-                    In the mean time feel free to reach out with the provided contact information on my resume.Hope
+                    Sorry for the inconvience. I'm working hard to get my site up and running for you.
+                    In the mean time feel free to reach out with the provided contact information on my resume. Hope
                     to hear from you soon.
                 </p>
-                <ResumeButton onClick={download} size="large">Download Resume</ResumeButton>
+                <ResumeButton
+                    onClick={download}
+                    size="large"
+                    className="shake-horizontal"
+                >
+                    Download Resume
+                </ResumeButton>
             </Box>
         </main >
     );
