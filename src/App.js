@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-import "./utilities/styles/styles.css";
+import './utilities/styles/styles.css';
 
-import ContactForm from './components/ContactForm'
+import NavigationBar from './components/NavigationBar';
 
 function App() {
-    return (
-        <ContactForm />
-    );
+    const sections = ['About', 'Resume', 'Projects', 'Contact'];
+
+    return <NavigationBar sections={sections} />;
 }
 
 export default App;
