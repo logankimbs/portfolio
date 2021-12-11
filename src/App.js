@@ -4,9 +4,9 @@ import './utilities/styles/styles.css';
 
 import NavigationBar from './components/NavigationBar';
 
-const sections = ['About', 'Resume', 'Projects', 'Contact'];
-
 function App() {
+    const sections = ['About', 'Resume', 'Projects', 'Contact'];
+
     return <NavigationBar sections={sections} />;
 }
 
