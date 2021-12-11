@@ -1,9 +1,12 @@
 import * as React from 'react';
+
 import "./utilities/styles/styles.css";
+
+import ContactForm from './components/ContactForm'
 
 function App() {
     return (
-        <h1>hello world</h1>
+        <ContactForm />
     );
 }
 
