@@ -1,29 +1,3 @@
 # Portfolio
 
-A [React](https://github.com/facebook/react) app that displays my resume, projects, and contact information.
-
-## Install Locally
-
-```bash
-git clone https://github.com/logankimbs/portfolio.git
-cd portfolio
-npm install
-```
-
-## Start Development Server
-
-```bash
-npm start
-```
-
-## Running Tests
-
-```bash
-npm test
-```
-
-## Deployment
-
-```bash
-npm run build
-```
+A [React](https://github.com/facebook/react) application that provides a place for individuals to learn more about me, download my resume, view featured projects, and get in touch.
