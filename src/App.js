@@ -4,20 +4,27 @@ import './utilities/styles/styles.css';
 
 import NavigationBar from './components/NavigationBar';
 import Portrait from './utilities/images/bigsurtrip.jpg';
+import fetchProjects from './utilities/helpers/projects';
 
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 function App() {
     const sections = ['About', 'Resume', 'Projects', 'Contact'];
+    const projects = fetchProjects();
+
+    console.log(projects);
 
     return (
         <>
             <NavigationBar sections={sections} />
             <Box component="main">
-                <Container maxWidth="md" id="About">
+                {/* about section */}
+                <Container component="section" maxWidth="md" id="About">
                     <Typography variant="h2">About Me</Typography>
                     <Grid container spacing={2} alignItems="flex-start">
                         <Grid item xs={12} sm={12} md={6}>
@@ -46,6 +53,32 @@ function App() {
                                 alt="windy day in big sur"
                                 src={Portrait}
                             />
+                        </Grid>
+                    </Grid>
+                </Container>
+
+                {/* projects section */}
+                <Container component="section" maxWidth="sm" id="Projects">
+                    <Typography variant="h2">Projects</Typography>
+                    <Typography variant="p" component="p">
+                        Contrary to popular belief, Lorem Ipsum is not simply
+                        random text. It has roots in a piece of classical Latin
+                        literature from 45 BC, making it over 2000 years old.
+                    </Typography>
+                    <Grid container spacing={2} alignItems="flex-start">
+                        <Grid item xs={12} sm={12}>
+                            <Card sx={{ display: 'flex' }}>
+                                <Box
+                                    sx={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                    }}
+                                >
+                                    <CardContent sx={{ flex: '1 0 auto' }}>
+                                        <Typography>Project Title</Typography>
+                                    </CardContent>
+                                </Box>
+                            </Card>
                         </Grid>
                     </Grid>
                 </Container>
