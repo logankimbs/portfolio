@@ -5,6 +5,7 @@ import './utilities/styles/styles.css';
 import NavigationBar from './components/NavigationBar';
 import Portrait from './utilities/images/bigsurtrip.jpg';
 import ProjectCard from './components/ProjectCard';
+import ContactForm from './components/ContactForm';
 
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -56,6 +57,12 @@ function App() {
                 <Container component="section" maxWidth="md" id="Projects">
                     <Typography variant="h2">Projects</Typography>
                     <ProjectCard />
+                </Container>
+
+                {/* contact section */}
+                <Container component="section" maxWidth="md" id="Contact">
+                    <Typography variant="h2">Contact</Typography>
+                    <ContactForm />
                 </Container>
             </Box>
         </>
