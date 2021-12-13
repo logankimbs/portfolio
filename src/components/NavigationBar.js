@@ -30,7 +30,7 @@ export default function NavigationBar(props) {
     return (
         <>
             <Slide appear={false} direction="down" in={!useScrollTrigger()}>
-                <AppBar color="transparent">
+                <AppBar color="primary">
                     <Container maxWidth="lg">
                         <Toolbar disableGutters>
                             <Box sx={{ flexGrow: 1, mr: 2 }}>
@@ -116,8 +116,6 @@ export default function NavigationBar(props) {
                     </Container>
                 </AppBar>
             </Slide>
-
-            <Toolbar />
         </>
     );
 }

@@ -19,8 +19,55 @@ function App() {
         <>
             <NavigationBar sections={sections} />
             <Box component="main">
+                {/* intro section */}
+                <Container
+                    component="section"
+                    maxWidth="sm"
+                    id="About"
+                    sx={{
+                        height: '100vh',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <Typography variant="h1" component="h1">
+                        Hey, I'm
+                    </Typography>
+                    <Typography
+                        variant="h1"
+                        component="h1"
+                        gutterBottom
+                        sx={{ color: 'primary.main' }}
+                    >
+                        Logan Kimball.
+                    </Typography>
+                    <Typography
+                        variant="subtitle1"
+                        component="subtitle1"
+                        gutterBottom
+                    >
+                        over 2000 years old. Richard McClintock, a Latin
+                        professor at Hampden-Sydney College in Virginia, looked
+                        up one of the more obscure Latin words, consectetur,
+                        from a Lorem Ipsum passage, and going through the cites
+                        of the word in classical literature, discovered the
+                        undoubtable source.
+                    </Typography>
+                </Container>
+
                 {/* about section */}
-                <Container component="section" maxWidth="md" id="About">
+                <Container
+                    component="section"
+                    maxWidth="md"
+                    id="About"
+                    sx={{
+                        height: '100vh',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                    }}
+                >
                     <Typography variant="h2">About Me</Typography>
                     <Grid container spacing={2} alignItems="flex-start">
                         <Grid item xs={12} sm={12} md={6}>
@@ -54,13 +101,23 @@ function App() {
                 </Container>
 
                 {/* projects section */}
-                <Container component="section" maxWidth="md" id="Projects">
+                <Container
+                    component="section"
+                    maxWidth="md"
+                    id="Projects"
+                    sx={{ maxHeight: '100vh' }}
+                >
                     <Typography variant="h2">Projects</Typography>
                     <ProjectCard />
                 </Container>
 
                 {/* contact section */}
-                <Container component="section" maxWidth="md" id="Contact">
+                <Container
+                    component="section"
+                    maxWidth="md"
+                    id="Contact"
+                    sx={{ maxHeight: '100vh' }}
+                >
                     <Typography variant="h2">Contact</Typography>
                     <ContactForm />
                 </Container>
