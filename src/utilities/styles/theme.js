@@ -1,32 +1,46 @@
 import createTheme from '@mui/material/styles/createTheme';
-import blue from '@mui/material/colors/blue';
-import purple from '@mui/material/colors/purple';
 
 const theme = createTheme({
     palette: {
         primary: {
-            main: blue[500],
+            main: '#3D348B',
         },
         secondary: {
-            main: purple[500],
+            main: '#E6AF2E',
+        },
+        third: {
+            black: '#191716',
+            white: '#E0E2DB',
+            bone: '#BEB7A4',
         },
     },
     typography: {
-        h2: {
-            fontSize: '1.875rem',
-            fontWeight: 700,
-            lineHeight: 1.5,
-            margin: '40px 0px 10px',
+        h1: {
+            margin: '20px 0px',
+            fontFamily:
+                'PlusJakartaSans-ExtraBold, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+            fontSize: 'clamp(2.625rem, 1.2857rem + 3.5714vw, 4rem)',
+            fontWeight: 800,
+            lineHeight: 1.11429,
+            maxWidth: '500px',
         },
-        h3: {
-            fontSize: '1.35rem',
+
+        h6: {
+            fontFamily: 'Bebas Neue, cursive',
+            fontWeight: 900,
+            fontSize: 'clamp(2.1rem, 1.3rem + 3vw, 3.2rem)',
+            letterSpacing: '.125rem',
+        },
+
+        body1: {
+            margin: '0px 0px 30px',
+            fontSize: '1rem',
             lineHeight: 1.5,
             letterSpacing: '0px',
-            fontWeight: 700,
-            margin: '0px 0px 10px',
-        },
-        p: {
-            margin: '0px 0px 16px',
+            fontFamily:
+                '"IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+            fontWeight: 400,
+            maxWidth: '500px',
         },
     },
 });
