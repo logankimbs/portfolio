@@ -18,7 +18,13 @@ const theme = createTheme({
             lineHeight: 1.5,
             margin: '40px 0px 10px',
         },
-
+        h3: {
+            fontSize: '1.35rem',
+            lineHeight: 1.5,
+            letterSpacing: '0px',
+            fontWeight: 700,
+            margin: '0px 0px 10px',
+        },
         p: {
             margin: '0px 0px 16px',
         },
