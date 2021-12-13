@@ -8,9 +8,6 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import Chip from '@mui/material/Chip';
 
-// languages: `https://api.github.com/repos/{username}/{repo}/languages`
-// topics: `https://api.github.com/repos/{username}/{repo}/topics
-
 export default function ProjectCard() {
     const [loading, setLoading] = React.useState(true);
     const [data, setData] = React.useState([]);
@@ -72,7 +69,7 @@ export default function ProjectCard() {
                                 {repo.name}
                             </Typography>
                         </Link>
-                        <Typography variant="p" component="p">
+                        <Typography component="p" variant="body2">
                             {repo.description}
                         </Typography>
 

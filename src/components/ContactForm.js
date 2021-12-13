@@ -77,7 +77,7 @@ export default function ContactForm() {
                     Your message sent successfully!
                 </Alert>
             ) : null}
-            <Box sx={{ py: 3 }}>
+            <Box>
                 <form ref={contactForm} onSubmit={handleSubmit(onSubmit)}>
                     <Grid
                         container

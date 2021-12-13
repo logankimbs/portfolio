@@ -30,17 +30,12 @@ export default function NavigationBar(props) {
     return (
         <>
             <Slide appear={false} direction="down" in={!useScrollTrigger()}>
-                <AppBar color="primary">
+                <AppBar color="primary" sx={{ py: 1.5 }}>
                     <Container maxWidth="lg">
                         <Toolbar disableGutters>
                             <Box sx={{ flexGrow: 1, mr: 2 }}>
-                                <Typography
-                                    varient="h6"
-                                    noWrap
-                                    component="div"
-                                    sx={{ mr: 2 }}
-                                >
-                                    Logan Kimball
+                                <Typography component="h6" variant="h6">
+                                    LOGAN KIMBALL
                                 </Typography>
                             </Box>
 
