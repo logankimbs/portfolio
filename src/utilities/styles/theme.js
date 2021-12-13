@@ -26,10 +26,10 @@ const theme = createTheme({
         },
 
         h6: {
-            fontFamily: 'Bebas Neue, cursive',
+            fontFamily:
+                'PlusJakartaSans-ExtraBold, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
             fontWeight: 900,
-            fontSize: 'clamp(2.1rem, 1.3rem + 3vw, 3.2rem)',
-            letterSpacing: '.125rem',
+            fontSize: 'clamp(2.3rem, 1rem + 1vw, 4rem)',
         },
 
         body1: {

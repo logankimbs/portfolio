@@ -35,7 +35,7 @@ export default function NavigationBar(props) {
                         <Toolbar disableGutters>
                             <Box sx={{ flexGrow: 1, mr: 2 }}>
                                 <Typography component="h6" variant="h6">
-                                    LOGAN KIMBALL
+                                    LK
                                 </Typography>
                             </Box>
 
@@ -76,10 +76,13 @@ export default function NavigationBar(props) {
                                             smooth={true}
                                             onClick={handleCloseNavMenu}
                                         >
-                                            <MenuItem>
-                                                <Typography textAlign="right">
-                                                    {section}
-                                                </Typography>
+                                            <MenuItem
+                                                sx={{
+                                                    mb: 0,
+                                                    textAlign: 'right',
+                                                }}
+                                            >
+                                                {section}
                                             </MenuItem>
                                         </Link>
                                     ))}

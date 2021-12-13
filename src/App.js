@@ -41,7 +41,6 @@ function App() {
                         >
                             Logan Kimball
                         </Typography>
-                        .
                     </Typography>
                     <Typography component="p" variant="body1">
                         over 2000 years old. Richard McClintock, a Latin
