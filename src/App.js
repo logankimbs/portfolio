@@ -13,9 +13,10 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import DownloadIcon from '@mui/icons-material/Download';
+import Link from '@mui/material/Link';
 
 function App() {
-    const sections = ['About', 'Resume', 'Projects', 'Contact'];
+    const sections = ['About', 'Projects', 'Contact'];
 
     return (
         <>
@@ -67,9 +68,28 @@ function App() {
                 </Container>
 
                 {/* about section */}
-                <Container component="section" maxWidth="md" id="About">
+                <Container
+                    component="section"
+                    maxWidth="md"
+                    id="About"
+                    sx={{ mb: '20vh' }}
+                >
+                    <Typography
+                        component="h2"
+                        variant="smallh2"
+                        color="primary"
+                    >
+                        About
+                    </Typography>
                     <Typography component="h2" variant="h2">
-                        About Me
+                        Just a little something special, but not too long{' '}
+                        <Typography
+                            component="span"
+                            variant="h2"
+                            color="primary.main"
+                        >
+                            software engineer
+                        </Typography>
                     </Typography>
                     <Grid container spacing={2} alignItems="flex-start">
                         <Grid item xs={12} sm={12} md={6}>
@@ -107,12 +127,31 @@ function App() {
                     component="section"
                     maxWidth="md"
                     id="Projects"
-                    sx={{ maxHeight: '100vh' }}
+                    sx={{ mb: '20vh' }}
                 >
-                    <Typography component="h2" variant="h2">
+                    <Typography
+                        component="h2"
+                        variant="smallh2"
+                        color="primary"
+                    >
                         Projects
                     </Typography>
-                    <ProjectCard />
+                    <Typography component="h2" variant="h2" mb={2.5}>
+                        Just a little something special, but not too long about{' '}
+                        <Typography
+                            component="span"
+                            variant="h2"
+                            color="primary.main"
+                        >
+                            cool projects
+                        </Typography>
+                    </Typography>
+
+                    <Grid container spacing={2} alignItems="flex-start">
+                        <Grid item xs={12} md={4}>
+                            <ProjectCard />
+                        </Grid>
+                    </Grid>
                 </Container>
 
                 {/* contact section */}
@@ -120,7 +159,7 @@ function App() {
                     component="section"
                     maxWidth="md"
                     id="Contact"
-                    sx={{ maxHeight: '100vh' }}
+                    sx={{ mb: '50vh' }}
                 >
                     <Typography component="h2" variant="h2">
                         Contact
