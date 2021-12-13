@@ -4,11 +4,12 @@ import './utilities/styles/styles.css';
 
 import NavigationBar from './components/NavigationBar';
 import Portrait from './utilities/images/bigsurtrip.jpg';
+import ProjectCard from './components/ProjectCard';
 
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 function App() {
     const sections = ['About', 'Resume', 'Projects', 'Contact'];
@@ -17,7 +18,8 @@ function App() {
         <>
             <NavigationBar sections={sections} />
             <Box component="main">
-                <Container maxWidth="md" id="About">
+                {/* about section */}
+                <Container component="section" maxWidth="md" id="About">
                     <Typography variant="h2">About Me</Typography>
                     <Grid container spacing={2} alignItems="flex-start">
                         <Grid item xs={12} sm={12} md={6}>
@@ -48,6 +50,12 @@ function App() {
                             />
                         </Grid>
                     </Grid>
+                </Container>
+
+                {/* projects section */}
+                <Container component="section" maxWidth="md" id="Projects">
+                    <Typography variant="h2">Projects</Typography>
+                    <ProjectCard />
                 </Container>
             </Box>
         </>
