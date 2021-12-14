@@ -1,6 +1,10 @@
 import * as React from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
 import './utilities/styles/styles.css';
+import getTheme from './utilities/styles/theme';
 
 import NavigationBar from './components/NavigationBar';
 import Portrait from './utilities/images/bigsurtrip.jpg';
@@ -13,13 +17,24 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import DownloadIcon from '@mui/icons-material/Download';
-import Link from '@mui/material/Link';
 
 function App() {
+    const presfersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    const palleteMode = React.useMemo(
+        () =>
+            createTheme({
+                palette: {
+                    mode: presfersDarkMode ? 'dark' : 'light',
+                },
+            }),
+        [presfersDarkMode]
+    );
+    const theme = createTheme(getTheme(palleteMode.palette.mode));
     const sections = ['About', 'Projects', 'Contact'];
 
     return (
-        <>
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
             <NavigationBar sections={sections} />
             <Box component="main">
                 {/* intro section */}
@@ -167,7 +182,7 @@ function App() {
                     <ContactForm />
                 </Container>
             </Box>
-        </>
+        </ThemeProvider>
     );
 }
 

@@ -1,13 +1,31 @@
-import createTheme from '@mui/material/styles/createTheme';
+import { amber, deepOrange, grey } from '@mui/material/colors';
 
-const theme = createTheme({
+const getTheme = (mode) => ({
     palette: {
-        primary: {
-            main: '#3D348B',
-        },
-        secondary: {
-            main: '#E6AF2E',
-        },
+        mode,
+        ...(mode === 'light'
+            ? {
+                  // palette values for light mode
+                  primary: amber,
+                  divider: amber[200],
+                  text: {
+                      primary: grey[900],
+                      secondary: grey[800],
+                  },
+              }
+            : {
+                  // palette values for dark mode
+                  primary: deepOrange,
+                  divider: deepOrange[700],
+                  background: {
+                      default: deepOrange[900],
+                      paper: deepOrange[900],
+                  },
+                  text: {
+                      primary: '#fff',
+                      secondary: grey[500],
+                  },
+              }),
     },
     typography: {
         h1: {
@@ -70,4 +88,4 @@ const theme = createTheme({
     },
 });
 
-export default theme;
+export default getTheme;
