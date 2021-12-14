@@ -32,6 +32,30 @@ function App() {
     const theme = createTheme(getTheme(palleteMode.palette.mode));
     const sections = ['About', 'Projects', 'Contact'];
 
+    const [loading, setLoading] = React.useState(true);
+    const [repos, setRepos] = React.useState([]);
+
+    React.useEffect(() => {
+        setLoading(true);
+        fetch('https://api.github.com/users/logankimbs/repos')
+            .then((res) => res.json())
+            .then((data) => {
+                setData(
+                    data.filter(
+                        (x) =>
+                            x.name === 'intex' ||
+                            x.name === 'portfolio' ||
+                            x.name === 'twitter-bots'
+                    )
+                );
+            });
+    }, []);
+
+    const setData = (data) => {
+        setRepos(data);
+        setLoading(false);
+    };
+
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
@@ -163,9 +187,13 @@ function App() {
                     </Typography>
 
                     <Grid container spacing={2} alignItems="flex-start">
-                        <Grid item xs={12} md={4}>
-                            <ProjectCard />
-                        </Grid>
+                        {!loading
+                            ? repos.map((repo) => (
+                                  <Grid item xs={12} md={4} key={repo.id}>
+                                      <ProjectCard project={repo} />
+                                  </Grid>
+                              ))
+                            : null}
                     </Grid>
                 </Container>
 
