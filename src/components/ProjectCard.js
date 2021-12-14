@@ -47,40 +47,67 @@ export default function ProjectCard() {
     }, []);
 
     return (
-        <Grid container spacing={2} alignItems="flex-start">
-            {data.map((repo) => (
-                <Grid item xs={12} md={4} key={repo.name}>
-                    <Box
-                        sx={{
-                            bgcolor: 'background.paper',
-                            overflow: 'hidden',
-                            borderRadius: '4px',
-                            boxShadow: 1,
-                            p: 3,
-                        }}
-                    >
-                        <Link
-                            href={repo.url}
-                            target="_blank"
-                            underline="hover"
-                            sx={{ display: 'inline-flex' }}
-                        >
-                            <Typography variant="h3" component="h3">
-                                {repo.name}
-                            </Typography>
-                        </Link>
-                        <Typography component="p" variant="body2">
-                            {repo.description}
-                        </Typography>
+        <Box
+            sx={{
+                bgcolor: 'background.paper',
+                overflow: 'hidden',
+                borderRadius: '4px',
+                boxShadow: 1,
+                p: 2.5,
+            }}
+        >
+            <Link
+                href="#"
+                target="_blank"
+                underline="hover"
+                sx={{
+                    display: 'inline-flex',
+                }}
+            >
+                <Typography variant="h3" component="h3">
+                    Twitter-Bots
+                </Typography>
+            </Link>
+            <Typography component="p" variant="body1">
+                You can start your projects with Google's Material Design or
+                build your own designs using the sophisticated theming features.
+            </Typography>
+        </Box>
 
-                        <Stack direction="row" spacing={1}>
-                            {repo.topics.map((topic) => (
-                                <Chip label={topic} size="small" />
-                            ))}
-                        </Stack>
-                    </Box>
-                </Grid>
-            ))}
-        </Grid>
+        // <Grid container spacing={2} alignItems="flex-start">
+        //     {data.map((repo) => (
+        //         <Grid item xs={12} md={4} key={repo.name}>
+        //             <Box
+        //                 sx={{
+        //                     bgcolor: 'background.paper',
+        //                     overflow: 'hidden',
+        //                     borderRadius: '4px',
+        //                     boxShadow: 1,
+        //                     p: 3,
+        //                 }}
+        //             >
+        //                 <Link
+        //                     href={repo.url}
+        //                     target="_blank"
+        //                     underline="hover"
+        //                     sx={{ display: 'inline-flex' }}
+        //                 >
+        //                     <Typography variant="h3" component="h3">
+        //                         {repo.name}
+        //                     </Typography>
+        //                 </Link>
+        //                 <Typography component="p" variant="body2">
+        //                     {repo.description}
+        //                 </Typography>
+
+        //                 <Stack direction="row" spacing={1}>
+        //                     {repo.topics.map((topic) => (
+        //                         <Chip label={topic} size="small" />
+        //                     ))}
+        //                 </Stack>
+        //             </Box>
+        //         </Grid>
+        //     ))}
+        // </Grid>
     );
 }

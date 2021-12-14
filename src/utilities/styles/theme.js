@@ -1,18 +1,20 @@
-import createTheme from '@mui/material/styles/createTheme';
-
-const theme = createTheme({
+const getTheme = (mode) => ({
     palette: {
-        primary: {
-            main: '#3D348B',
-        },
-        secondary: {
-            main: '#E6AF2E',
-        },
-        third: {
-            black: '#191716',
-            white: '#E0E2DB',
-            bone: '#BEB7A4',
-        },
+        mode,
+        ...(mode === 'light'
+            ? {
+                  // light mode
+                  // primary: {},
+                  // divider: '',
+                  // text: {},
+              }
+            : {
+                  // dark mode
+                  // primary: {},
+                  // divider: '',
+                  // background: {},
+                  // text: {},
+              }),
     },
     typography: {
         h1: {
@@ -25,11 +27,35 @@ const theme = createTheme({
             maxWidth: '500px',
         },
 
+        smallh2: {
+            margin: '0px 0px 10px',
+            fontSize: '0.875rem',
+            lineHeight: 1.5,
+            fontWeight: 700,
+        },
+
+        h2: {
+            margin: '10px 0px',
+            fontFamily:
+                'PlusJakartaSans-ExtraBold, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+            fontSize: 'clamp(1.5rem, 0.9643rem + 1.4286vw, 2.25rem)',
+            fontWeight: 800,
+            lineHeight: 1.22222,
+        },
+
+        h3: {
+            marginBottom: '10px',
+            fontSize: '0.875rem',
+            lineHeight: 1.5,
+            letterSpacing: '0px',
+            fontWeight: 700,
+        },
+
         h6: {
-            fontFamily: 'Bebas Neue, cursive',
+            fontFamily:
+                'PlusJakartaSans-ExtraBold, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
             fontWeight: 900,
-            fontSize: 'clamp(2.1rem, 1.3rem + 3vw, 3.2rem)',
-            letterSpacing: '.125rem',
+            fontSize: 'clamp(2.3rem, 1rem + 1vw, 4rem)',
         },
 
         body1: {
@@ -37,12 +63,18 @@ const theme = createTheme({
             fontSize: '1rem',
             lineHeight: 1.5,
             letterSpacing: '0px',
-            fontFamily:
-                '"IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
             fontWeight: 400,
             maxWidth: '500px',
+        },
+
+        body2: {
+            margin: '0px',
+            fontSize: '0.875rem',
+            lineHeight: 1.5,
+            letterSpacing: '0px',
+            fontWeight: 400,
         },
     },
 });
 
-export default theme;
+export default getTheme;

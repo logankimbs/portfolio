@@ -13,6 +13,7 @@ import Menu from '@mui/material/Menu';
 import { Link } from 'react-scroll';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
 
 export default function NavigationBar(props) {
     const { sections } = props;
@@ -35,7 +36,7 @@ export default function NavigationBar(props) {
                         <Toolbar disableGutters>
                             <Box sx={{ flexGrow: 1, mr: 2 }}>
                                 <Typography component="h6" variant="h6">
-                                    LOGAN KIMBALL
+                                    LK
                                 </Typography>
                             </Box>
 
@@ -76,10 +77,13 @@ export default function NavigationBar(props) {
                                             smooth={true}
                                             onClick={handleCloseNavMenu}
                                         >
-                                            <MenuItem>
-                                                <Typography textAlign="right">
-                                                    {section}
-                                                </Typography>
+                                            <MenuItem
+                                                sx={{
+                                                    mb: 0,
+                                                    textAlign: 'right',
+                                                }}
+                                            >
+                                                {section}
                                             </MenuItem>
                                         </Link>
                                     ))}
@@ -111,6 +115,7 @@ export default function NavigationBar(props) {
                     </Container>
                 </AppBar>
             </Slide>
+            <Divider />
         </>
     );
 }

@@ -1,6 +1,10 @@
 import * as React from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
 import './utilities/styles/styles.css';
+import getTheme from './utilities/styles/theme';
 
 import NavigationBar from './components/NavigationBar';
 import Portrait from './utilities/images/bigsurtrip.jpg';
@@ -15,10 +19,22 @@ import Button from '@mui/material/Button';
 import DownloadIcon from '@mui/icons-material/Download';
 
 function App() {
-    const sections = ['About', 'Resume', 'Projects', 'Contact'];
+    const presfersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    const palleteMode = React.useMemo(
+        () =>
+            createTheme({
+                palette: {
+                    mode: presfersDarkMode ? 'dark' : 'light',
+                },
+            }),
+        [presfersDarkMode]
+    );
+    const theme = createTheme(getTheme(palleteMode.palette.mode));
+    const sections = ['About', 'Projects', 'Contact'];
 
     return (
-        <>
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
             <NavigationBar sections={sections} />
             <Box component="main">
                 {/* intro section */}
@@ -41,7 +57,6 @@ function App() {
                         >
                             Logan Kimball
                         </Typography>
-                        .
                     </Typography>
                     <Typography component="p" variant="body1">
                         over 2000 years old. Richard McClintock, a Latin
@@ -68,9 +83,28 @@ function App() {
                 </Container>
 
                 {/* about section */}
-                <Container component="section" maxWidth="md" id="About">
+                <Container
+                    component="section"
+                    maxWidth="md"
+                    id="About"
+                    sx={{ mb: '20vh' }}
+                >
+                    <Typography
+                        component="h2"
+                        variant="smallh2"
+                        color="primary"
+                    >
+                        About
+                    </Typography>
                     <Typography component="h2" variant="h2">
-                        About Me
+                        Just a little something special, but not too long{' '}
+                        <Typography
+                            component="span"
+                            variant="h2"
+                            color="primary.main"
+                        >
+                            software engineer
+                        </Typography>
                     </Typography>
                     <Grid container spacing={2} alignItems="flex-start">
                         <Grid item xs={12} sm={12} md={6}>
@@ -108,12 +142,31 @@ function App() {
                     component="section"
                     maxWidth="md"
                     id="Projects"
-                    sx={{ maxHeight: '100vh' }}
+                    sx={{ mb: '20vh' }}
                 >
-                    <Typography component="h2" variant="h2">
+                    <Typography
+                        component="h2"
+                        variant="smallh2"
+                        color="primary"
+                    >
                         Projects
                     </Typography>
-                    <ProjectCard />
+                    <Typography component="h2" variant="h2" mb={2.5}>
+                        Just a little something special, but not too long about{' '}
+                        <Typography
+                            component="span"
+                            variant="h2"
+                            color="primary.main"
+                        >
+                            cool projects
+                        </Typography>
+                    </Typography>
+
+                    <Grid container spacing={2} alignItems="flex-start">
+                        <Grid item xs={12} md={4}>
+                            <ProjectCard />
+                        </Grid>
+                    </Grid>
                 </Container>
 
                 {/* contact section */}
@@ -121,7 +174,7 @@ function App() {
                     component="section"
                     maxWidth="md"
                     id="Contact"
-                    sx={{ maxHeight: '100vh' }}
+                    sx={{ mb: '50vh' }}
                 >
                     <Typography component="h2" variant="h2">
                         Contact
@@ -129,7 +182,7 @@ function App() {
                     <ContactForm />
                 </Container>
             </Box>
-        </>
+        </ThemeProvider>
     );
 }
 
