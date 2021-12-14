@@ -1,30 +1,19 @@
-import { amber, deepOrange, grey } from '@mui/material/colors';
-
 const getTheme = (mode) => ({
     palette: {
         mode,
         ...(mode === 'light'
             ? {
-                  // palette values for light mode
-                  primary: amber,
-                  divider: amber[200],
-                  text: {
-                      primary: grey[900],
-                      secondary: grey[800],
-                  },
+                  // light mode
+                  // primary: {},
+                  // divider: '',
+                  // text: {},
               }
             : {
-                  // palette values for dark mode
-                  primary: deepOrange,
-                  divider: deepOrange[700],
-                  background: {
-                      default: deepOrange[900],
-                      paper: deepOrange[900],
-                  },
-                  text: {
-                      primary: '#fff',
-                      secondary: grey[500],
-                  },
+                  // dark mode
+                  // primary: {},
+                  // divider: '',
+                  // background: {},
+                  // text: {},
               }),
     },
     typography: {

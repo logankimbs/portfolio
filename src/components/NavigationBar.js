@@ -13,6 +13,7 @@ import Menu from '@mui/material/Menu';
 import { Link } from 'react-scroll';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
 
 export default function NavigationBar(props) {
     const { sections } = props;
@@ -114,6 +115,7 @@ export default function NavigationBar(props) {
                     </Container>
                 </AppBar>
             </Slide>
+            <Divider />
         </>
     );
 }
