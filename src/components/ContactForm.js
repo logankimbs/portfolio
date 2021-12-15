@@ -87,8 +87,11 @@ export default function ContactForm() {
                     variant="filled"
                     size="small"
                     margin="normal"
-                    defaultValue=""
-                    sx={{}}
+                    sx={{
+                        '.MuiFilledInput-root': {
+                            backgroundColor: 'transparent.primary.main',
+                        },
+                    }}
                     fullWidth
                     {...register('name')}
                     error={errors.name ? true : false}
@@ -102,6 +105,12 @@ export default function ContactForm() {
                     variant="filled"
                     size="small"
                     margin="normal"
+                    sx={{
+                        '.MuiFilledInput-root': {
+                            backgroundColor: 'transparent.primary.main',
+                            borderBottom: 'primary.main',
+                        },
+                    }}
                     fullWidth
                     {...register('email')}
                     error={errors.email ? true : false}
@@ -116,6 +125,11 @@ export default function ContactForm() {
                     variant="filled"
                     size="small"
                     margin="normal"
+                    sx={{
+                        '.MuiFilledInput-root': {
+                            backgroundColor: 'transparent.primary.main',
+                        },
+                    }}
                     fullWidth
                     multiline
                     {...register('message')}

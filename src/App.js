@@ -17,10 +17,23 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+
+import GitHubIcon from '@mui/icons-material/GitHub';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export default function App() {
     const [loading, setLoading] = React.useState(true);
     const [projects, setProjects] = React.useState([]);
+
+    const download = () => {
+        const link = document.createElement('a');
+        link.download = 'resume.pdf';
+        link.href = './resume.pdf';
+        link.click();
+    };
 
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
     const theme = React.useMemo(
@@ -132,7 +145,9 @@ export default function App() {
                         <Button
                             size="large"
                             variant="outlined"
+                            color="secondary"
                             sx={{ textTransform: 'none' }}
+                            onClick={download}
                         >
                             Download resume
                         </Button>
@@ -157,14 +172,22 @@ export default function App() {
                     </Typography>
                     <Grid container spacing={2} alignItems="flex-start">
                         <Grid item xs={12} sm={12} md={6}>
-                            <Typography>
+                            <Typography
+                                component="p"
+                                variant="body1"
+                                sx={{ mb: '30px' }}
+                            >
                                 This is a longer sentance about me. I will talk
                                 about who I am and little things like that. Like
                                 where i'm from, what my profession is, what i
                                 want to do with my life. It doesnt need to be
                                 complicated by make it informative.
                             </Typography>
-                            <Typography>
+                            <Typography
+                                component="p"
+                                variant="body1"
+                                sx={{ mb: '30px' }}
+                            >
                                 This is just a closing sentence to close things
                                 off and introduce my projects. Nothing crazy,
                                 just an outro.
@@ -176,7 +199,7 @@ export default function App() {
                                 width="100%"
                                 alt="a windy day in big sur, california"
                                 src={portrait}
-                                sx={{ borderRadius: 4 }}
+                                sx={{ borderRadius: 4, opacity: 0.8 }}
                             />
                         </Grid>
                     </Grid>
@@ -226,6 +249,56 @@ export default function App() {
                         short and to the point.
                     </Typography>
                     <ContactForm />
+                </Container>
+
+                <Divider light />
+
+                <Container component="footer" maxWidth="xl">
+                    <Box
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="space-between"
+                        paddingTop={5}
+                        paddingBottom={5}
+                    >
+                        <Typography
+                            component="p"
+                            color="text.secondary"
+                            variant="body2"
+                            marginBottom={0}
+                        >
+                            Copyright © {new Date().getFullYear()} Logan Kimball
+                        </Typography>
+
+                        <Box>
+                            <Box display="flex" flexDirection="row">
+                                <IconButton
+                                    size="large"
+                                    color="inherit"
+                                    href="https://github.com/logankimbs"
+                                    target="_blank"
+                                >
+                                    <GitHubIcon />
+                                </IconButton>
+                                <IconButton
+                                    size="large"
+                                    color="inherit"
+                                    href="https://twitter.com/logankimball_"
+                                    target="_blank"
+                                >
+                                    <TwitterIcon />
+                                </IconButton>
+                                <IconButton
+                                    size="large"
+                                    color="inherit"
+                                    href="https://www.linkedin.com/in/logankimbs/"
+                                    target="_blank"
+                                >
+                                    <LinkedInIcon />
+                                </IconButton>
+                            </Box>
+                        </Box>
+                    </Box>
                 </Container>
             </Box>
         </ThemeProvider>

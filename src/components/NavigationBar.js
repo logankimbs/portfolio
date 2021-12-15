@@ -117,17 +117,6 @@ export default function NavigationBar() {
                                     </Button>
                                 </Link>
                             ))}
-                            <Button
-                                variant="outlined"
-                                color="secondary"
-                                sx={{
-                                    ml: 2,
-                                    display: 'block',
-                                    textTransform: 'capitalize',
-                                }}
-                            >
-                                Resume
-                            </Button>
                         </Box>
                     </Toolbar>
                 </Container>
