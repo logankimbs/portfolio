@@ -108,9 +108,10 @@ export default function App() {
                 <Container
                     component="section"
                     maxWidth="sm"
+                    id="home"
                     sx={{
-                        marginTop: 'calc(52vh - 15rem)',
-                        marginBottom: '15rem',
+                        paddingTop: 'calc(52vh - 15rem)',
+                        paddingBottom: '7.5rem',
                         display: 'flex',
                         flexDirection: 'column',
                         justifyContent: 'center',
@@ -158,7 +159,7 @@ export default function App() {
                     component="section"
                     maxWidth="md"
                     id="about"
-                    sx={{ my: '15rem' }}
+                    sx={{ py: '7.5rem' }}
                 >
                     <Typography color="primary" component="h2" variant="small">
                         About me
@@ -209,7 +210,7 @@ export default function App() {
                     component="section"
                     maxWidth="md"
                     id="projects"
-                    sx={{ my: '15rem' }}
+                    sx={{ py: '7.5rem' }}
                 >
                     <Typography color="primary" component="h2" variant="small">
                         Projects
@@ -235,7 +236,7 @@ export default function App() {
                     component="section"
                     maxWidth="md"
                     id="contact"
-                    sx={{ my: '15rem' }}
+                    sx={{ py: '7.5rem' }}
                 >
                     <Typography color="primary" component="h2" variant="small">
                         Contact me
@@ -251,7 +252,7 @@ export default function App() {
                     <ContactForm />
                 </Container>
 
-                <Divider light />
+                <Divider light sx={{ mt: '7.5rem' }} />
 
                 <Container component="footer" maxWidth="xl">
                     <Box

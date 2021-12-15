@@ -44,7 +44,11 @@ export default function NavigationBar() {
                                 mr: 2,
                             }}
                         >
-                            <Logo />
+                            <Link to={'home'} spy={true} smooth={true}>
+                                <IconButton color="inherit">
+                                    <Logo />
+                                </IconButton>
+                            </Link>
                         </Box>
 
                         <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
