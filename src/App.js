@@ -1,217 +1,306 @@
 import * as React from 'react';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
 
 import './utilities/styles/styles.css';
-import getTheme from './utilities/styles/theme';
+
+import useMediaQuery from '@mui/material/useMediaQuery';
+import createTheme from '@mui/material/styles/createTheme';
+import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import CssBaseline from '@mui/material/CssBaseline';
 
 import NavigationBar from './components/NavigationBar';
-import Portrait from './utilities/images/bigsurtrip.jpg';
+import portrait from './utilities/images/bigsurtrip.jpg';
 import ProjectCard from './components/ProjectCard';
 import ContactForm from './components/ContactForm';
 
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import DownloadIcon from '@mui/icons-material/Download';
+import Grid from '@mui/material/Grid';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
 
-function App() {
-    const presfersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-    const palleteMode = React.useMemo(
+import GitHubIcon from '@mui/icons-material/GitHub';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
+export default function App() {
+    const [loading, setLoading] = React.useState(true);
+    const [projects, setProjects] = React.useState([]);
+
+    const download = () => {
+        const link = document.createElement('a');
+        link.download = 'resume.pdf';
+        link.href = './resume.pdf';
+        link.click();
+    };
+
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    const theme = React.useMemo(
         () =>
             createTheme({
                 palette: {
-                    mode: presfersDarkMode ? 'dark' : 'light',
+                    mode: prefersDarkMode ? 'dark' : 'light',
+                    transparent: {
+                        primary: {
+                            main: '#90caf918',
+                        },
+                        success: {
+                            main: '#81c78418',
+                        },
+                    },
+                },
+                typography: {
+                    h1: {
+                        fontSize: 42,
+                        fontWeight: 800,
+                    },
+                    h2: {
+                        fontSize: 36,
+                        fontWeight: 800,
+                        marginTop: 10,
+                        marginBottom: 40,
+                    },
+                    h3: {
+                        fontSize: 20,
+                        fontWeight: 700,
+                        marginBottom: 10,
+                    },
+                    body1: {
+                        fontSize: 16,
+                    },
+                    body2: {
+                        fontSize: 14,
+                        lineHeight: 1.5,
+                        marginBottom: 20,
+                    },
+                    small: {
+                        fontSize: 14,
+                        fontWeight: 700,
+                        marginBottom: 10,
+                    },
                 },
             }),
-        [presfersDarkMode]
+        [prefersDarkMode]
     );
-    const theme = createTheme(getTheme(palleteMode.palette.mode));
-    const sections = ['About', 'Projects', 'Contact'];
-
-    const [loading, setLoading] = React.useState(true);
-    const [repos, setRepos] = React.useState([]);
 
     React.useEffect(() => {
-        setLoading(true);
         fetch('https://api.github.com/users/logankimbs/repos')
             .then((res) => res.json())
-            .then((data) => {
-                setData(
-                    data.filter(
-                        (x) =>
-                            x.name === 'intex' ||
-                            x.name === 'portfolio' ||
-                            x.name === 'twitter-bots'
+            .then((projects) => {
+                setProjects(
+                    projects.filter(
+                        (project) =>
+                            project.name === 'intex' ||
+                            project.name === 'portfolio' ||
+                            project.name === 'twitter-bots'
                     )
                 );
             });
-    }, []);
-
-    const setData = (data) => {
-        setRepos(data);
         setLoading(false);
-    };
+    }, []);
 
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <NavigationBar sections={sections} />
+            <NavigationBar />
             <Box component="main">
-                {/* intro section */}
                 <Container
                     component="section"
                     maxWidth="sm"
                     sx={{
-                        height: '100vh',
+                        marginTop: 'calc(52vh - 15rem)',
+                        marginBottom: '15rem',
                         display: 'flex',
                         flexDirection: 'column',
                         justifyContent: 'center',
                     }}
                 >
-                    <Typography component="h1" variant="h1">
-                        Hey, I'm{' '}
+                    <Box sx={{ my: '30px' }}>
+                        <Typography component="h1" variant="h1">
+                            Hey, I'm
+                        </Typography>
                         <Typography
-                            component="span"
+                            component="h1"
                             variant="h1"
                             color="primary.main"
                         >
                             Logan Kimball
                         </Typography>
-                    </Typography>
-                    <Typography component="p" variant="body1">
-                        over 2000 years old. Richard McClintock, a Latin
-                        professor at Hampden-Sydney College in Virginia, looked
-                        up one of the more obscure Latin words, consectetur,
-                        from a Lorem Ipsum passage, and going through the cites
-                        of the word in classical literature, discovered the
-                        undoubtable source.
-                    </Typography>
-
-                    <Button
-                        variant="contained"
-                        size="large"
-                        startIcon={<DownloadIcon />}
-                        sx={{
-                            textTransform: 'none',
-                            fontWeight: 700,
-                            fontSize: '1rem',
-                            py: 1.5,
-                        }}
+                        <Typography component="h1" variant="h1">
+                            Quick and catchy statement
+                        </Typography>
+                    </Box>
+                    <Typography
+                        component="p"
+                        variant="body1"
+                        sx={{ mb: '30px' }}
                     >
-                        download resume
-                    </Button>
+                        A few sentances about me that is captivating and engages
+                        the reader. Keep it short but make sure to engage the
+                        reader. This paragraph is very important, dont skrew it
+                        up.
+                    </Typography>
+                    <Box sx={{ display: 'inline-flex' }}>
+                        <Button
+                            size="large"
+                            variant="outlined"
+                            color="secondary"
+                            sx={{ textTransform: 'none' }}
+                            onClick={download}
+                        >
+                            Download resume
+                        </Button>
+                    </Box>
                 </Container>
 
-                {/* about section */}
                 <Container
                     component="section"
                     maxWidth="md"
-                    id="About"
-                    sx={{ mb: '20vh' }}
+                    id="about"
+                    sx={{ my: '15rem' }}
                 >
+                    <Typography color="primary" component="h2" variant="small">
+                        About me
+                    </Typography>
                     <Typography
                         component="h2"
-                        variant="smallh2"
-                        color="primary"
+                        variant="h2"
+                        sx={{ maxWidth: 500 }}
                     >
-                        About
-                    </Typography>
-                    <Typography component="h2" variant="h2">
-                        Just a little something special, but not too long{' '}
-                        <Typography
-                            component="span"
-                            variant="h2"
-                            color="primary.main"
-                        >
-                            software engineer
-                        </Typography>
+                        A catchy little fact about me thats interesting
                     </Typography>
                     <Grid container spacing={2} alignItems="flex-start">
                         <Grid item xs={12} sm={12} md={6}>
-                            <Typography component="p" variant="body1">
-                                Contrary to popular belief, Lorem Ipsum is not
-                                simply random text. It has roots in a piece of
-                                classical Latin literature from 45 BC, making it
-                                over 2000 years old. Richard McClintock, a Latin
-                                professor at Hampden-Sydney College in Virginia,
-                                looked up one of the more obscure Latin words,
-                                consectetur, from a Lorem Ipsum passage, and
-                                going through the cites of the word in classical
-                                literature, discovered the undoubtable source.
+                            <Typography
+                                component="p"
+                                variant="body1"
+                                sx={{ mb: '30px' }}
+                            >
+                                This is a longer sentance about me. I will talk
+                                about who I am and little things like that. Like
+                                where i'm from, what my profession is, what i
+                                want to do with my life. It doesnt need to be
+                                complicated by make it informative.
                             </Typography>
-                            <Typography component="p" variant="body1">
-                                Contrary to popular belief, Lorem Ipsum is not
-                                simply random text. It has roots in a piece of
-                                classical Latin literature from 45 BC, making it
-                                over 2000 years old.
+                            <Typography
+                                component="p"
+                                variant="body1"
+                                sx={{ mb: '30px' }}
+                            >
+                                This is just a closing sentence to close things
+                                off and introduce my projects. Nothing crazy,
+                                just an outro.
                             </Typography>
                         </Grid>
                         <Grid item xs={12} sm={12} md={6}>
                             <Box
                                 component="img"
-                                sx={{ width: '100%' }}
-                                alt="windy day in big sur"
-                                src={Portrait}
+                                width="100%"
+                                alt="a windy day in big sur, california"
+                                src={portrait}
+                                sx={{ borderRadius: 4, opacity: 0.8 }}
                             />
                         </Grid>
                     </Grid>
                 </Container>
 
-                {/* projects section */}
                 <Container
                     component="section"
                     maxWidth="md"
-                    id="Projects"
-                    sx={{ mb: '20vh' }}
+                    id="projects"
+                    sx={{ my: '15rem' }}
                 >
-                    <Typography
-                        component="h2"
-                        variant="smallh2"
-                        color="primary"
-                    >
+                    <Typography color="primary" component="h2" variant="small">
                         Projects
                     </Typography>
-                    <Typography component="h2" variant="h2" mb={2.5}>
-                        Just a little something special, but not too long about{' '}
-                        <Typography
-                            component="span"
-                            variant="h2"
-                            color="primary.main"
-                        >
-                            cool projects
-                        </Typography>
+                    <Typography
+                        component="h2"
+                        variant="h2"
+                        sx={{ maxWidth: 500 }}
+                    >
+                        Something cool about my projects that sets me apart from
+                        other people.
                     </Typography>
-
-                    <Grid container spacing={2} alignItems="flex-start">
-                        {!loading
-                            ? repos.map((repo) => (
-                                  <Grid item xs={12} md={4} key={repo.id}>
-                                      <ProjectCard project={repo} />
-                                  </Grid>
-                              ))
-                            : null}
+                    <Grid container spacing={2} alignItems="stretch">
+                        {projects.map((project) => (
+                            <Grid item xs={12} md={4} key={project.id}>
+                                <ProjectCard project={project} />
+                            </Grid>
+                        ))}
                     </Grid>
                 </Container>
 
-                {/* contact section */}
                 <Container
                     component="section"
                     maxWidth="md"
-                    id="Contact"
-                    sx={{ mb: '50vh' }}
+                    id="contact"
+                    sx={{ my: '15rem' }}
                 >
-                    <Typography component="h2" variant="h2">
-                        Contact
+                    <Typography color="primary" component="h2" variant="small">
+                        Contact me
+                    </Typography>
+                    <Typography
+                        component="h2"
+                        variant="h2"
+                        sx={{ maxWidth: 500 }}
+                    >
+                        Give them a reason why they should contact me. Make it
+                        short and to the point.
                     </Typography>
                     <ContactForm />
+                </Container>
+
+                <Divider light />
+
+                <Container component="footer" maxWidth="xl">
+                    <Box
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="space-between"
+                        paddingTop={5}
+                        paddingBottom={5}
+                    >
+                        <Typography
+                            component="p"
+                            color="text.secondary"
+                            variant="body2"
+                            marginBottom={0}
+                        >
+                            Copyright © {new Date().getFullYear()} Logan Kimball
+                        </Typography>
+
+                        <Box>
+                            <Box display="flex" flexDirection="row">
+                                <IconButton
+                                    size="large"
+                                    color="inherit"
+                                    href="https://github.com/logankimbs"
+                                    target="_blank"
+                                >
+                                    <GitHubIcon />
+                                </IconButton>
+                                <IconButton
+                                    size="large"
+                                    color="inherit"
+                                    href="https://twitter.com/logankimball_"
+                                    target="_blank"
+                                >
+                                    <TwitterIcon />
+                                </IconButton>
+                                <IconButton
+                                    size="large"
+                                    color="inherit"
+                                    href="https://www.linkedin.com/in/logankimbs/"
+                                    target="_blank"
+                                >
+                                    <LinkedInIcon />
+                                </IconButton>
+                            </Box>
+                        </Box>
+                    </Box>
                 </Container>
             </Box>
         </ThemeProvider>
     );
 }
-
-export default App;

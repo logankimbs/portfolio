@@ -1,37 +1,49 @@
 import * as React from 'react';
 
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
+import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
+import Chip from '@mui/material/Chip';
 
 export default function ProjectCard(props) {
     const { project } = props;
 
     return (
-        <Box
+        <Paper
+            variant="outlined"
             sx={{
-                bgcolor: 'background.paper',
-                overflow: 'hidden',
-                borderRadius: '4px',
-                boxShadow: 1,
-                p: 2.5,
+                p: '20px',
+                borderColor: 'rgba(144, 202, 249, 0.5)',
+                backgroundColor: 'transparent.primary.main',
+                height: '100%',
+                borderRadius: 2,
             }}
         >
-            <Link
-                href={project.html_url}
-                target="_blank"
-                underline="hover"
-                sx={{
-                    display: 'inline-flex',
-                }}
+            <Typography
+                component="h3"
+                variant="h3"
+                sx={{ textTransform: 'capitalize' }}
             >
-                <Typography variant="h3" component="h3">
+                <Link underline="hover" target="_blank" href={project.html_url}>
                     {project.name}
-                </Typography>
-            </Link>
-            <Typography component="p" variant="body1">
+                </Link>
+            </Typography>
+            <Typography component="p" variant="body2" color="primary.light">
                 {project.description}
             </Typography>
-        </Box>
+            <Stack direction="row" spacing={1}>
+                {project.topics.map((topic) => (
+                    <Chip
+                        size="small"
+                        color="primary"
+                        variant="outlined"
+                        key={topic}
+                        label={topic}
+                        sx={{ textTransform: 'capitalize' }}
+                    />
+                ))}
+            </Stack>
+        </Paper>
     );
 }
