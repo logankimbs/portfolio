@@ -30,9 +30,10 @@ export default function App() {
                     mode: prefersDarkMode ? 'dark' : 'light',
                     transparent: {
                         primary: {
-                            main: '#90caf92d',
-                            dark: '',
-                            light: '',
+                            main: '#90caf918',
+                        },
+                        success: {
+                            main: '#81c78418',
                         },
                     },
                 },
@@ -54,7 +55,6 @@ export default function App() {
                     },
                     body1: {
                         fontSize: 16,
-                        marginBottom: 30,
                     },
                     body2: {
                         fontSize: 14,
@@ -97,6 +97,7 @@ export default function App() {
                     maxWidth="sm"
                     sx={{
                         marginTop: 'calc(52vh - 15rem)',
+                        marginBottom: '15rem',
                         display: 'flex',
                         flexDirection: 'column',
                         justifyContent: 'center',
@@ -104,14 +105,24 @@ export default function App() {
                 >
                     <Box sx={{ my: '30px' }}>
                         <Typography component="h1" variant="h1">
-                            Hey, I'm{' '}
-                            <Typography color="primary" variant="h1">
-                                Logan Kimball
-                            </Typography>{' '}
+                            Hey, I'm
+                        </Typography>
+                        <Typography
+                            component="h1"
+                            variant="h1"
+                            color="primary.main"
+                        >
+                            Logan Kimball
+                        </Typography>
+                        <Typography component="h1" variant="h1">
                             Quick and catchy statement
                         </Typography>
                     </Box>
-                    <Typography component="p" variant="body1">
+                    <Typography
+                        component="p"
+                        variant="body1"
+                        sx={{ mb: '30px' }}
+                    >
                         A few sentances about me that is captivating and engages
                         the reader. Keep it short but make sure to engage the
                         reader. This paragraph is very important, dont skrew it

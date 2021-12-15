@@ -9,7 +9,6 @@ import Alert from '@mui/material/Alert';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import CheckIcon from '@mui/icons-material/Check';
-import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
@@ -28,12 +27,11 @@ export default function ContactForm() {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm({ resolver: yupResolver(validationSchema) });
 
-    const onSubmit = (event) => {
-        event.preventDefault();
-
+    const onSubmit = () => {
         emailjs
             .sendForm(
                 process.env.REACT_APP_EMAIL_SERVICE_ID,
@@ -45,13 +43,12 @@ export default function ContactForm() {
                 (result) => {
                     console.log(result.text);
                     setOpenAlert(true);
+                    reset('');
                 },
                 (error) => {
                     console.log(error.text);
                 }
             );
-
-        event.target.reset();
     };
 
     return (
@@ -60,6 +57,7 @@ export default function ContactForm() {
                 <Alert
                     severity="success"
                     icon={<CheckIcon fontSize="inherit" />}
+                    variant="outlined"
                     action={
                         <IconButton
                             aria-label="close"
@@ -72,76 +70,68 @@ export default function ContactForm() {
                             <CloseIcon fontSize="inherit" />
                         </IconButton>
                     }
-                    sx={{ mb: 2 }}
+                    sx={{ mb: 2, backgroundColor: 'transparent.success.main' }}
                 >
                     Your message sent successfully!
                 </Alert>
             ) : null}
-            <Box>
-                <form ref={contactForm} onSubmit={handleSubmit(onSubmit)}>
-                    <Grid
-                        container
-                        direction="row"
-                        justifyContent="space-around"
-                        alignItems="center"
-                        spacing={2}
-                        sx={{ mb: 4 }}
-                    >
-                        <Grid item xs={12}>
-                            <TextField
-                                id="name"
-                                label="Name"
-                                name="name"
-                                variant="outlined"
-                                size="small"
-                                fullWidth
-                                {...register('name')}
-                                error={errors.name ? true : false}
-                                helperText={errors.name?.message}
-                            />
-                        </Grid>
+            <Box
+                component="form"
+                ref={contactForm}
+                onSubmit={handleSubmit(onSubmit)}
+            >
+                <TextField
+                    id="name"
+                    label="Name"
+                    name="name"
+                    variant="filled"
+                    size="small"
+                    margin="normal"
+                    defaultValue=""
+                    sx={{}}
+                    fullWidth
+                    {...register('name')}
+                    error={errors.name ? true : false}
+                    helperText={errors.name?.message}
+                />
 
-                        <Grid item xs={12}>
-                            <TextField
-                                id="email"
-                                label="Email"
-                                name="email"
-                                variant="outlined"
-                                size="small"
-                                fullWidth
-                                {...register('email')}
-                                error={errors.email ? true : false}
-                                helperText={errors.email?.message}
-                            />
-                        </Grid>
+                <TextField
+                    id="email"
+                    label="Email"
+                    name="email"
+                    variant="filled"
+                    size="small"
+                    margin="normal"
+                    fullWidth
+                    {...register('email')}
+                    error={errors.email ? true : false}
+                    helperText={errors.email?.message}
+                />
 
-                        <Grid item xs={12}>
-                            <TextField
-                                id="message"
-                                label="Message"
-                                name="message"
-                                placeholder="Write a short message"
-                                variant="outlined"
-                                size="small"
-                                fullWidth
-                                multiline
-                                {...register('message')}
-                                rows={4}
-                                error={errors.message ? true : false}
-                                helperText={errors.message?.message}
-                            />
-                        </Grid>
-                    </Grid>
+                <TextField
+                    id="message"
+                    label="Message"
+                    name="message"
+                    placeholder="Write a short message"
+                    variant="filled"
+                    size="small"
+                    margin="normal"
+                    fullWidth
+                    multiline
+                    {...register('message')}
+                    rows={4}
+                    error={errors.message ? true : false}
+                    helperText={errors.message?.message}
+                />
 
-                    <Button
-                        variant="outlined"
-                        type="submit"
-                        color="primary"
-                        sx={{ textTransform: 'capitalize' }}
-                    >
-                        Submit
-                    </Button>
-                </form>
+                <Button
+                    variant="outlined"
+                    type="submit"
+                    color="primary"
+                    sx={{ textTransform: 'capitalize', my: 3, borderRadius: 2 }}
+                >
+                    Submit
+                </Button>
             </Box>
         </Box>
     );

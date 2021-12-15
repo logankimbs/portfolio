@@ -1,7 +1,6 @@
 import * as React from 'react';
 
-import { ReactComponent as Logo } from '../utilities/images/logo2.svg';
-
+import { ReactComponent as Logo } from '../utilities/images/logo.svg';
 import { Link } from 'react-scroll';
 
 import Slide from '@mui/material/Slide';
@@ -111,6 +110,7 @@ export default function NavigationBar() {
                                             color: 'inherit',
                                             display: 'block',
                                             textTransform: 'capitalize',
+                                            mx: 2,
                                         }}
                                     >
                                         {section}
@@ -121,6 +121,7 @@ export default function NavigationBar() {
                                 variant="outlined"
                                 color="secondary"
                                 sx={{
+                                    ml: 2,
                                     display: 'block',
                                     textTransform: 'capitalize',
                                 }}

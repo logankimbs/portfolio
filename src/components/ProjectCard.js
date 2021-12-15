@@ -26,14 +26,14 @@ export default function ProjectCard(props) {
             >
                 {project.name}
             </Typography>
-            <Typography component="p" variant="body2" color="text.secondary">
+            <Typography component="p" variant="body2" color="primary.light">
                 {project.description}
             </Typography>
             <Stack direction="row" spacing={1}>
                 {project.topics.map((topic) => (
                     <Chip
                         size="small"
-                        color="secondary"
+                        color="primary"
                         variant="outlined"
                         key={topic}
                         label={topic}
