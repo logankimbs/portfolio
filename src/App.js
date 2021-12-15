@@ -8,16 +8,15 @@ import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import NavigationBar from './components/NavigationBar';
-import Portrait from './utilities/images/bigsurtrip.jpg';
+import portrait from './utilities/images/bigsurtrip.jpg';
 import ProjectCard from './components/ProjectCard';
 import ContactForm from './components/ContactForm';
 
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import DownloadIcon from '@mui/icons-material/Download';
+import Grid from '@mui/material/Grid';
 
 export default function App() {
     const [loading, setLoading] = React.useState(true);
@@ -29,6 +28,44 @@ export default function App() {
             createTheme({
                 palette: {
                     mode: prefersDarkMode ? 'dark' : 'light',
+                    transparent: {
+                        primary: {
+                            main: '#90caf92d',
+                            dark: '',
+                            light: '',
+                        },
+                    },
+                },
+                typography: {
+                    h1: {
+                        fontSize: 42,
+                        fontWeight: 800,
+                    },
+                    h2: {
+                        fontSize: 36,
+                        fontWeight: 800,
+                        marginTop: 10,
+                        marginBottom: 40,
+                    },
+                    h3: {
+                        fontSize: 20,
+                        fontWeight: 700,
+                        marginBottom: 10,
+                    },
+                    body1: {
+                        fontSize: 16,
+                        marginBottom: 30,
+                    },
+                    body2: {
+                        fontSize: 14,
+                        lineHeight: 1.5,
+                        marginBottom: 20,
+                    },
+                    small: {
+                        fontSize: 14,
+                        fontWeight: 700,
+                        marginBottom: 10,
+                    },
                 },
             }),
         [prefersDarkMode]
@@ -54,199 +91,132 @@ export default function App() {
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <NavigationBar />
+            <Box component="main">
+                <Container
+                    component="section"
+                    maxWidth="sm"
+                    sx={{
+                        marginTop: 'calc(52vh - 15rem)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <Box sx={{ my: '30px' }}>
+                        <Typography component="h1" variant="h1">
+                            Hey, I'm{' '}
+                            <Typography color="primary" variant="h1">
+                                Logan Kimball
+                            </Typography>{' '}
+                            Quick and catchy statement
+                        </Typography>
+                    </Box>
+                    <Typography component="p" variant="body1">
+                        A few sentances about me that is captivating and engages
+                        the reader. Keep it short but make sure to engage the
+                        reader. This paragraph is very important, dont skrew it
+                        up.
+                    </Typography>
+                    <Box sx={{ display: 'inline-flex' }}>
+                        <Button
+                            size="large"
+                            variant="outlined"
+                            sx={{ textTransform: 'none' }}
+                        >
+                            Download resume
+                        </Button>
+                    </Box>
+                </Container>
+
+                <Container
+                    component="section"
+                    maxWidth="md"
+                    id="about"
+                    sx={{ my: '15rem' }}
+                >
+                    <Typography color="primary" component="h2" variant="small">
+                        About me
+                    </Typography>
+                    <Typography
+                        component="h2"
+                        variant="h2"
+                        sx={{ maxWidth: 500 }}
+                    >
+                        A catchy little fact about me thats interesting
+                    </Typography>
+                    <Grid container spacing={2} alignItems="flex-start">
+                        <Grid item xs={12} sm={12} md={6}>
+                            <Typography>
+                                This is a longer sentance about me. I will talk
+                                about who I am and little things like that. Like
+                                where i'm from, what my profession is, what i
+                                want to do with my life. It doesnt need to be
+                                complicated by make it informative.
+                            </Typography>
+                            <Typography>
+                                This is just a closing sentence to close things
+                                off and introduce my projects. Nothing crazy,
+                                just an outro.
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={6}>
+                            <Box
+                                component="img"
+                                width="100%"
+                                alt="a windy day in big sur, california"
+                                src={portrait}
+                                sx={{ borderRadius: 4 }}
+                            />
+                        </Grid>
+                    </Grid>
+                </Container>
+
+                <Container
+                    component="section"
+                    maxWidth="md"
+                    id="projects"
+                    sx={{ my: '15rem' }}
+                >
+                    <Typography color="primary" component="h2" variant="small">
+                        Projects
+                    </Typography>
+                    <Typography
+                        component="h2"
+                        variant="h2"
+                        sx={{ maxWidth: 500 }}
+                    >
+                        Something cool about my projects that sets me apart from
+                        other people.
+                    </Typography>
+                    <Grid container spacing={2} alignItems="stretch">
+                        {projects.map((project) => (
+                            <Grid item xs={12} md={4} key={project.id}>
+                                <ProjectCard project={project} />
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Container>
+
+                <Container
+                    component="section"
+                    maxWidth="md"
+                    id="contact"
+                    sx={{ my: '15rem' }}
+                >
+                    <Typography color="primary" component="h2" variant="small">
+                        Contact me
+                    </Typography>
+                    <Typography
+                        component="h2"
+                        variant="h2"
+                        sx={{ maxWidth: 500 }}
+                    >
+                        Give them a reason why they should contact me. Make it
+                        short and to the point.
+                    </Typography>
+                    <ContactForm />
+                </Container>
+            </Box>
         </ThemeProvider>
     );
-
-    // return (
-    //     <ThemeProvider theme={theme}>
-    //         <CssBaseline />
-    //         <NavigationBar />
-    //         <Box component="main">
-    //             {/* intro section */}
-    //             <Container
-    //                 component="section"
-    //                 maxWidth="sm"
-    //                 sx={{
-    //                     height: '100vh',
-    //                     display: 'flex',
-    //                     flexDirection: 'column',
-    //                     justifyContent: 'center',
-    //                 }}
-    //             >
-    //                 <Typography component="h1" variant="h1">
-    //                     Hey, I'm{' '}
-    //                     <Typography
-    //                         component="span"
-    //                         variant="h1"
-    //                         color="primary.main"
-    //                     >
-    //                         Logan Kimball
-    //                     </Typography>
-    //                 </Typography>
-    //                 <Typography component="p" variant="body1">
-    //                     over 2000 years old. Richard McClintock, a Latin
-    //                     professor at Hampden-Sydney College in Virginia, looked
-    //                     up one of the more obscure Latin words, consectetur,
-    //                     from a Lorem Ipsum passage, and going through the cites
-    //                     of the word in classical literature, discovered the
-    //                     undoubtable source.
-    //                 </Typography>
-
-    //                 <Button
-    //                     variant="contained"
-    //                     size="large"
-    //                     startIcon={<DownloadIcon />}
-    //                     sx={{
-    //                         textTransform: 'none',
-    //                         fontWeight: 700,
-    //                         fontSize: '1rem',
-    //                         py: 1.5,
-    //                     }}
-    //                 >
-    //                     download resume
-    //                 </Button>
-    //             </Container>
-
-    //             {/* about section */}
-    //             <Container
-    //                 component="section"
-    //                 maxWidth="md"
-    //                 id="About"
-    //                 sx={{ mb: '20vh' }}
-    //             >
-    //                 <Typography
-    //                     component="h2"
-    //                     variant="smallh2"
-    //                     color="primary"
-    //                 >
-    //                     About
-    //                 </Typography>
-    //                 <Typography component="h2" variant="h2">
-    //                     Just a little something special, but not too long{' '}
-    //                     <Typography
-    //                         component="span"
-    //                         variant="h2"
-    //                         color="primary.main"
-    //                     >
-    //                         software engineer
-    //                     </Typography>
-    //                 </Typography>
-    //                 <Grid container spacing={2} alignItems="flex-start">
-    //                     <Grid item xs={12} sm={12} md={6}>
-    //                         <Typography component="p" variant="body1">
-    //                             Contrary to popular belief, Lorem Ipsum is not
-    //                             simply random text. It has roots in a piece of
-    //                             classical Latin literature from 45 BC, making it
-    //                             over 2000 years old. Richard McClintock, a Latin
-    //                             professor at Hampden-Sydney College in Virginia,
-    //                             looked up one of the more obscure Latin words,
-    //                             consectetur, from a Lorem Ipsum passage, and
-    //                             going through the cites of the word in classical
-    //                             literature, discovered the undoubtable source.
-    //                         </Typography>
-    //                         <Typography component="p" variant="body1">
-    //                             Contrary to popular belief, Lorem Ipsum is not
-    //                             simply random text. It has roots in a piece of
-    //                             classical Latin literature from 45 BC, making it
-    //                             over 2000 years old.
-    //                         </Typography>
-    //                     </Grid>
-    //                     <Grid item xs={12} sm={12} md={6}>
-    //                         <Box
-    //                             component="img"
-    //                             sx={{ width: '100%' }}
-    //                             alt="windy day in big sur"
-    //                             src={Portrait}
-    //                         />
-    //                     </Grid>
-    //                 </Grid>
-    //             </Container>
-
-    //             {/* projects section */}
-    //             <Container
-    //                 component="section"
-    //                 maxWidth="md"
-    //                 id="Projects"
-    //                 sx={{ mb: '20vh' }}
-    //             >
-    //                 <Typography
-    //                     component="h2"
-    //                     variant="smallh2"
-    //                     color="primary"
-    //                 >
-    //                     Projects
-    //                 </Typography>
-    //                 <Typography component="h2" variant="h2" mb={2.5}>
-    //                     Just a little something special, but not too long about{' '}
-    //                     <Typography
-    //                         component="span"
-    //                         variant="h2"
-    //                         color="primary.main"
-    //                     >
-    //                         cool projects
-    //                     </Typography>
-    //                 </Typography>
-
-    //                 <Grid container spacing={2} alignItems="flex-start">
-    //                     {!loading
-    //                         ? repos.map((repo) => (
-    //                               <Grid item xs={12} md={4} key={repo.id}>
-    //                                   <ProjectCard project={repo} />
-    //                               </Grid>
-    //                           ))
-    //                         : null}
-    //                 </Grid>
-    //             </Container>
-
-    //             {/* contact section */}
-    //             <Container
-    //                 component="section"
-    //                 maxWidth="md"
-    //                 id="Contact"
-    //                 sx={{ mb: '50vh' }}
-    //             >
-    //                 <Typography component="h2" variant="h2">
-    //                     Contact
-    //                 </Typography>
-    //                 <ContactForm />
-    //             </Container>
-    //         </Box>
-    //     </ThemeProvider>
-    // );
 }
-
-// const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-
-// const theme = React.useMemo(
-//     () =>
-//         createTheme({
-//             palette: {
-//                 mode: prefersDarkMode ? 'dark' : 'light',
-//             },
-//         }),
-//     [prefersDarkMode]
-// );
-
-// const [loading, setLoading] = React.useState(true);
-// const [repos, setRepos] = React.useState([]);
-
-// React.useEffect(() => {
-//     setLoading(true);
-//     fetch('https://api.github.com/users/logankimbs/repos')
-//         .then((res) => res.json())
-//         .then((data) => {
-//             setData(
-//                 data.filter(
-//                     (x) =>
-//                         x.name === 'intex' ||
-//                         x.name === 'portfolio' ||
-//                         x.name === 'twitter-bots'
-//                 )
-//             );
-//         });
-// }, []);
-
-// const setData = (data) => {
-//     setRepos(data);
-//     setLoading(false);
-// };

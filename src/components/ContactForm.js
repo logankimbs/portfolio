@@ -93,7 +93,7 @@ export default function ContactForm() {
                                 label="Name"
                                 name="name"
                                 variant="outlined"
-                                margin="dense"
+                                size="small"
                                 fullWidth
                                 {...register('name')}
                                 error={errors.name ? true : false}
@@ -107,7 +107,7 @@ export default function ContactForm() {
                                 label="Email"
                                 name="email"
                                 variant="outlined"
-                                margin="dense"
+                                size="small"
                                 fullWidth
                                 {...register('email')}
                                 error={errors.email ? true : false}
@@ -122,7 +122,7 @@ export default function ContactForm() {
                                 name="message"
                                 placeholder="Write a short message"
                                 variant="outlined"
-                                margin="dense"
+                                size="small"
                                 fullWidth
                                 multiline
                                 {...register('message')}
@@ -133,7 +133,12 @@ export default function ContactForm() {
                         </Grid>
                     </Grid>
 
-                    <Button variant="contained" type="submit">
+                    <Button
+                        variant="outlined"
+                        type="submit"
+                        color="primary"
+                        sx={{ textTransform: 'capitalize' }}
+                    >
                         Submit
                     </Button>
                 </form>

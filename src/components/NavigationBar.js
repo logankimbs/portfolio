@@ -1,9 +1,8 @@
 import * as React from 'react';
 
-import styled from '@mui/material/styles/styled';
-import useTheme from '@mui/material/styles/useTheme';
-import createTheme from '@mui/material/styles/createTheme';
-import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import { ReactComponent as Logo } from '../utilities/images/logo2.svg';
+
+import { Link } from 'react-scroll';
 
 import Slide from '@mui/material/Slide';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
@@ -11,11 +10,9 @@ import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
-import { Link } from 'react-scroll';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 
@@ -33,13 +30,22 @@ export default function NavigationBar() {
 
     return (
         <Slide appear={false} direction="down" in={!useScrollTrigger()}>
-            <AppBar color="inherit" sx={{ py: 1.5 }} enableColorOnDark>
+            <AppBar
+                color="inherit"
+                sx={{ py: 1.5, color: 'primary.dark' }}
+                enableColorOnDark
+            >
                 <Container maxWidth="lg">
-                    <Toolbar disableGutters>
-                        <Box sx={{ flexGrow: 1, mr: 2 }}>
-                            <Typography component="h6" variant="h6">
-                                LK
-                            </Typography>
+                    <Toolbar disableGutters sx={{ alignItems: 'center' }}>
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                flexGrow: 1,
+                                mr: 2,
+                            }}
+                        >
+                            <Logo />
                         </Box>
 
                         <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -58,9 +64,7 @@ export default function NavigationBar() {
                                 keepMounted
                                 open={Boolean(anchorElNav)}
                                 onClose={handleCloseNavMenu}
-                                sx={{
-                                    display: { xs: 'block', md: 'none' },
-                                }}
+                                sx={{ display: { xs: 'block', md: 'none' } }}
                                 anchorEl={anchorElNav}
                                 anchorOrigin={{
                                     vertical: 'bottom',
@@ -74,7 +78,7 @@ export default function NavigationBar() {
                                 {sections.map((section) => (
                                     <Link
                                         key={section}
-                                        to={section}
+                                        to={section.toLowerCase()}
                                         spy={true}
                                         smooth={true}
                                         onClick={handleCloseNavMenu}
@@ -83,6 +87,7 @@ export default function NavigationBar() {
                                             sx={{
                                                 mb: 0,
                                                 textAlign: 'right',
+                                                color: 'primary.dark',
                                             }}
                                         >
                                             {section}
@@ -96,22 +101,32 @@ export default function NavigationBar() {
                             {sections.map((section) => (
                                 <Link
                                     key={section}
-                                    to={section}
+                                    to={section.toLowerCase()}
                                     spy={true}
                                     smooth={true}
                                     onClick={handleCloseNavMenu}
                                 >
                                     <Button
-                                        size="small"
                                         sx={{
                                             color: 'inherit',
                                             display: 'block',
+                                            textTransform: 'capitalize',
                                         }}
                                     >
                                         {section}
                                     </Button>
                                 </Link>
                             ))}
+                            <Button
+                                variant="outlined"
+                                color="secondary"
+                                sx={{
+                                    display: 'block',
+                                    textTransform: 'capitalize',
+                                }}
+                            >
+                                Resume
+                            </Button>
                         </Box>
                     </Toolbar>
                 </Container>
