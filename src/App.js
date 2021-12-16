@@ -126,10 +126,10 @@ export default function App() {
                             variant="h1"
                             color="primary.main"
                         >
-                            Logan Kimball
+                            Logan Kimball.
                         </Typography>
                         <Typography component="h1" variant="h1">
-                            Quick and catchy statement
+                            A software developer with a business intelligence.
                         </Typography>
                     </Box>
                     <Typography
